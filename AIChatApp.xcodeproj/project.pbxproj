@@ -8,24 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		CA643C5C2B208BF70092B575 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA643C5B2B208BF70092B575 /* AppDelegate.swift */; };
-		CA643C5E2B208BF70092B575 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA643C5D2B208BF70092B575 /* SceneDelegate.swift */; };
-		CA643C602B208BF70092B575 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA643C5F2B208BF70092B575 /* ViewController.swift */; };
-		CA643C632B208BF70092B575 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA643C612B208BF70092B575 /* Main.storyboard */; };
 		CA643C662B208BF70092B575 /* AIChatApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CA643C642B208BF70092B575 /* AIChatApp.xcdatamodeld */; };
 		CA643C682B208BF80092B575 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA643C672B208BF80092B575 /* Assets.xcassets */; };
-		CA643C6B2B208BF80092B575 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA643C692B208BF80092B575 /* LaunchScreen.storyboard */; };
+		CA643C742B208D2F0092B575 /* NeonSDK in Frameworks */ = {isa = PBXBuildFile; productRef = CA643C732B208D2F0092B575 /* NeonSDK */; };
+		CA643C772B208DBE0092B575 /* GhostTypewriter in Frameworks */ = {isa = PBXBuildFile; productRef = CA643C762B208DBE0092B575 /* GhostTypewriter */; };
+		CA643C7B2B208F170092B575 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA643C7A2B208F170092B575 /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CA643C582B208BF70092B575 /* AIChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA643C5B2B208BF70092B575 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CA643C5D2B208BF70092B575 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CA643C5F2B208BF70092B575 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CA643C622B208BF70092B575 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CA643C652B208BF70092B575 /* AIChatApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AIChatApp.xcdatamodel; sourceTree = "<group>"; };
 		CA643C672B208BF80092B575 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CA643C6A2B208BF80092B575 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA643C6C2B208BF80092B575 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA643C7A2B208F170092B575 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +29,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA643C742B208D2F0092B575 /* NeonSDK in Frameworks */,
+				CA643C772B208DBE0092B575 /* GhostTypewriter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,16 +56,29 @@
 		CA643C5A2B208BF70092B575 /* AIChatApp */ = {
 			isa = PBXGroup;
 			children = (
+				CA643C782B208EF00092B575 /* Scene */,
 				CA643C5B2B208BF70092B575 /* AppDelegate.swift */,
-				CA643C5D2B208BF70092B575 /* SceneDelegate.swift */,
-				CA643C5F2B208BF70092B575 /* ViewController.swift */,
-				CA643C612B208BF70092B575 /* Main.storyboard */,
 				CA643C672B208BF80092B575 /* Assets.xcassets */,
-				CA643C692B208BF80092B575 /* LaunchScreen.storyboard */,
 				CA643C6C2B208BF80092B575 /* Info.plist */,
 				CA643C642B208BF70092B575 /* AIChatApp.xcdatamodeld */,
 			);
 			path = AIChatApp;
+			sourceTree = "<group>";
+		};
+		CA643C782B208EF00092B575 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				CA643C792B208F060092B575 /* Home */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		CA643C792B208F060092B575 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CA643C7A2B208F170092B575 /* HomeVC.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +97,10 @@
 			dependencies = (
 			);
 			name = AIChatApp;
+			packageProductDependencies = (
+				CA643C732B208D2F0092B575 /* NeonSDK */,
+				CA643C762B208DBE0092B575 /* GhostTypewriter */,
+			);
 			productName = AIChatApp;
 			productReference = CA643C582B208BF70092B575 /* AIChatApp.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +129,10 @@
 				Base,
 			);
 			mainGroup = CA643C4F2B208BF70092B575;
+			packageReferences = (
+				CA643C722B208D2F0092B575 /* XCRemoteSwiftPackageReference "NeonSDK" */,
+				CA643C752B208DBE0092B575 /* XCRemoteSwiftPackageReference "GhostTypewriter" */,
+			);
 			productRefGroup = CA643C592B208BF70092B575 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -128,9 +147,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA643C6B2B208BF80092B575 /* LaunchScreen.storyboard in Resources */,
 				CA643C682B208BF80092B575 /* Assets.xcassets in Resources */,
-				CA643C632B208BF70092B575 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,33 +158,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA643C602B208BF70092B575 /* ViewController.swift in Sources */,
+				CA643C7B2B208F170092B575 /* HomeVC.swift in Sources */,
 				CA643C662B208BF70092B575 /* AIChatApp.xcdatamodeld in Sources */,
 				CA643C5C2B208BF70092B575 /* AppDelegate.swift in Sources */,
-				CA643C5E2B208BF70092B575 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		CA643C612B208BF70092B575 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CA643C622B208BF70092B575 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CA643C692B208BF80092B575 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CA643C6A2B208BF80092B575 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CA643C6D2B208BF80092B575 /* Debug */ = {
@@ -306,6 +303,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nesrinnbozan.AIChatApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -334,6 +334,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nesrinnbozan.AIChatApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -362,6 +365,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CA643C722B208D2F0092B575 /* XCRemoteSwiftPackageReference "NeonSDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/NesrinBozan/NeonSDK.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		CA643C752B208DBE0092B575 /* XCRemoteSwiftPackageReference "GhostTypewriter" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/wibosco/GhostTypewriter.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CA643C732B208D2F0092B575 /* NeonSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA643C722B208D2F0092B575 /* XCRemoteSwiftPackageReference "NeonSDK" */;
+			productName = NeonSDK;
+		};
+		CA643C762B208DBE0092B575 /* GhostTypewriter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA643C752B208DBE0092B575 /* XCRemoteSwiftPackageReference "GhostTypewriter" */;
+			productName = GhostTypewriter;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		CA643C642B208BF70092B575 /* AIChatApp.xcdatamodeld */ = {
