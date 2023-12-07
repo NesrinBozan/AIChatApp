@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Font.configureFonts(font: .Inter)
 //        FirebaseApp.configure()
-        Neon.configure(window: &window, onboardingVC: HomeVC(), paywallVC: HomeVC(), homeVC: HomeVC())
+        Neon.configure(window: &window, onboardingVC: TabbarController(), paywallVC: TabbarController(), homeVC: TabbarController())
         return true
     }
     
