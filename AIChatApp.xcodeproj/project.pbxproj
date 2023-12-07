@@ -13,6 +13,18 @@
 		CA643C742B208D2F0092B575 /* NeonSDK in Frameworks */ = {isa = PBXBuildFile; productRef = CA643C732B208D2F0092B575 /* NeonSDK */; };
 		CA643C772B208DBE0092B575 /* GhostTypewriter in Frameworks */ = {isa = PBXBuildFile; productRef = CA643C762B208DBE0092B575 /* GhostTypewriter */; };
 		CA643C7B2B208F170092B575 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA643C7A2B208F170092B575 /* HomeVC.swift */; };
+		CAFF62C72B21C33F00D3CC45 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF62C62B21C33F00D3CC45 /* FirebaseManager.swift */; };
+		CAFF62C92B21C34C00D3CC45 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF62C82B21C34C00D3CC45 /* APIManager.swift */; };
+		CAFF62CB2B21C37500D3CC45 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF62CA2B21C37500D3CC45 /* UIColor+Extension.swift */; };
+		CAFF62D22B21C3F800D3CC45 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF62D12B21C3F800D3CC45 /* Settings.swift */; };
+		CAFF62D52B21C62B00D3CC45 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF62D42B21C62B00D3CC45 /* TabbarController.swift */; };
+		CAFF62D72B21C64F00D3CC45 /* ExploreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF62D62B21C64F00D3CC45 /* ExploreVC.swift */; };
+		CAFF62D92B21C66E00D3CC45 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF62D82B21C66E00D3CC45 /* HistoryVC.swift */; };
+		CAFF62DF2B21CACE00D3CC45 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF62DE2B21CACE00D3CC45 /* HeaderView.swift */; };
+		CAFF62E12B21CC0F00D3CC45 /* TextManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF62E02B21CC0F00D3CC45 /* TextManagementView.swift */; };
+		CAFF62E32B21CC2300D3CC45 /* MathAndSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF62E22B21CC2300D3CC45 /* MathAndSummaryView.swift */; };
+		CAFF62E62B21D16300D3CC45 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF62E52B21D16300D3CC45 /* Constants.swift */; };
+		CAFF62E82B21E0E300D3CC45 /* TextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF62E72B21E0E300D3CC45 /* TextInputField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +34,18 @@
 		CA643C672B208BF80092B575 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA643C6C2B208BF80092B575 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA643C7A2B208F170092B575 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		CAFF62C62B21C33F00D3CC45 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		CAFF62C82B21C34C00D3CC45 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		CAFF62CA2B21C37500D3CC45 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		CAFF62D12B21C3F800D3CC45 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		CAFF62D42B21C62B00D3CC45 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
+		CAFF62D62B21C64F00D3CC45 /* ExploreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreVC.swift; sourceTree = "<group>"; };
+		CAFF62D82B21C66E00D3CC45 /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
+		CAFF62DE2B21CACE00D3CC45 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		CAFF62E02B21CC0F00D3CC45 /* TextManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextManagementView.swift; sourceTree = "<group>"; };
+		CAFF62E22B21CC2300D3CC45 /* MathAndSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathAndSummaryView.swift; sourceTree = "<group>"; };
+		CAFF62E52B21D16300D3CC45 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CAFF62E72B21E0E300D3CC45 /* TextInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +80,11 @@
 		CA643C5A2B208BF70092B575 /* AIChatApp */ = {
 			isa = PBXGroup;
 			children = (
+				CAFF62E42B21D14F00D3CC45 /* Constants */,
+				CAFF62C52B21C30A00D3CC45 /* Extensions */,
+				CAFF62C42B21C2D700D3CC45 /* View */,
+				CAFF62C32B21C2D100D3CC45 /* Manager */,
+				CAFF62C22B21C2CB00D3CC45 /* Model */,
 				CA643C782B208EF00092B575 /* Scene */,
 				CA643C5B2B208BF70092B575 /* AppDelegate.swift */,
 				CA643C672B208BF80092B575 /* Assets.xcassets */,
@@ -68,7 +97,10 @@
 		CA643C782B208EF00092B575 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				CA643C792B208F060092B575 /* Home */,
+				CAFF62D32B21C5FD00D3CC45 /* Tabbar */,
+				CAFF62D02B21C3E700D3CC45 /* Paywal */,
+				CAFF62CF2B21C3DE00D3CC45 /* Onboarding */,
+				CAFF62CE2B21C3D800D3CC45 /* Settings */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -79,6 +111,130 @@
 				CA643C7A2B208F170092B575 /* HomeVC.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		CAFF62C22B21C2CB00D3CC45 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CAFF62C32B21C2D100D3CC45 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				CAFF62C62B21C33F00D3CC45 /* FirebaseManager.swift */,
+				CAFF62C82B21C34C00D3CC45 /* APIManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		CAFF62C42B21C2D700D3CC45 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CAFF62DD2B21CAB400D3CC45 /* Buttons */,
+				CAFF62DC2B21CAA800D3CC45 /* Views */,
+				CAFF62DB2B21CAA000D3CC45 /* TableViews */,
+				CAFF62DA2B21CA9600D3CC45 /* CollectionViews */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CAFF62C52B21C30A00D3CC45 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CAFF62CA2B21C37500D3CC45 /* UIColor+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CAFF62CC2B21C3BC00D3CC45 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				CAFF62D62B21C64F00D3CC45 /* ExploreVC.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		CAFF62CD2B21C3C300D3CC45 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				CAFF62D82B21C66E00D3CC45 /* HistoryVC.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		CAFF62CE2B21C3D800D3CC45 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CAFF62D12B21C3F800D3CC45 /* Settings.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		CAFF62CF2B21C3DE00D3CC45 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		CAFF62D02B21C3E700D3CC45 /* Paywal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Paywal;
+			sourceTree = "<group>";
+		};
+		CAFF62D32B21C5FD00D3CC45 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				CAFF62D42B21C62B00D3CC45 /* TabbarController.swift */,
+				CAFF62CC2B21C3BC00D3CC45 /* Explore */,
+				CAFF62CD2B21C3C300D3CC45 /* History */,
+				CA643C792B208F060092B575 /* Home */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		CAFF62DA2B21CA9600D3CC45 /* CollectionViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CollectionViews;
+			sourceTree = "<group>";
+		};
+		CAFF62DB2B21CAA000D3CC45 /* TableViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViews;
+			sourceTree = "<group>";
+		};
+		CAFF62DC2B21CAA800D3CC45 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CAFF62DE2B21CACE00D3CC45 /* HeaderView.swift */,
+				CAFF62E02B21CC0F00D3CC45 /* TextManagementView.swift */,
+				CAFF62E22B21CC2300D3CC45 /* MathAndSummaryView.swift */,
+				CAFF62E72B21E0E300D3CC45 /* TextInputField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CAFF62DD2B21CAB400D3CC45 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		CAFF62E42B21D14F00D3CC45 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				CAFF62E52B21D16300D3CC45 /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,7 +314,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAFF62E32B21CC2300D3CC45 /* MathAndSummaryView.swift in Sources */,
+				CAFF62C72B21C33F00D3CC45 /* FirebaseManager.swift in Sources */,
+				CAFF62D92B21C66E00D3CC45 /* HistoryVC.swift in Sources */,
+				CAFF62D52B21C62B00D3CC45 /* TabbarController.swift in Sources */,
 				CA643C7B2B208F170092B575 /* HomeVC.swift in Sources */,
+				CAFF62D72B21C64F00D3CC45 /* ExploreVC.swift in Sources */,
+				CAFF62C92B21C34C00D3CC45 /* APIManager.swift in Sources */,
+				CAFF62E82B21E0E300D3CC45 /* TextInputField.swift in Sources */,
+				CAFF62CB2B21C37500D3CC45 /* UIColor+Extension.swift in Sources */,
+				CAFF62DF2B21CACE00D3CC45 /* HeaderView.swift in Sources */,
+				CAFF62E12B21CC0F00D3CC45 /* TextManagementView.swift in Sources */,
+				CAFF62D22B21C3F800D3CC45 /* Settings.swift in Sources */,
+				CAFF62E62B21D16300D3CC45 /* Constants.swift in Sources */,
 				CA643C662B208BF70092B575 /* AIChatApp.xcdatamodeld in Sources */,
 				CA643C5C2B208BF70092B575 /* AppDelegate.swift in Sources */,
 			);
