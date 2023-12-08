@@ -54,10 +54,10 @@ class TextInputView: UIView, UIImagePickerControllerDelegate, UIDocumentPickerDe
     }
     
     private func configureBackground() {
-        backgroundColor = .buttonStrokeColor2
+        backgroundColor = .blackClr
         layer.cornerRadius = 10
         layer.borderWidth = 1
-        layer.borderColor = UIColor.mainColor.cgColor
+        layer.borderColor = UIColor.mainClr.cgColor
     }
     
     private func configureButtons() {

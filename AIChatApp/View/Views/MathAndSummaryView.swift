@@ -10,16 +10,17 @@ import SnapKit
 import NeonSDK
 
 class MathAndSummaryView: UIView {
-    
-    private var imageView = NeonImageView()
-    private var titleLabel = NeonLabel()
-    private var button = NeonButton()
-    private var backgroundImageView = NeonImageView()
+    private let imageView = NeonImageView()
+    private let titleLabel = NeonLabel()
+    private let button = NeonButton()
+    private let backgroundImageView = NeonImageView()
+    private let crownImage = UIImageView()
 
-    init(image: UIImage?, title: String?, buttonText: String?, background: UIImage?) {
+    init(image: UIImage?, title: String?, buttonText: String?, background: UIImage?, crownIsHidden: Bool) {
         super.init(frame: .zero)
         commonInit()
         configure(image: image, title: title, buttonText: buttonText, background: background)
+        crownImage.isHidden = crownIsHidden
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -57,7 +58,7 @@ class MathAndSummaryView: UIView {
     private func styleButton() {
         let attributes: [NSAttributedString.Key: Any] = [
             .font: Font.custom(size: 14, fontWeight: .Bold),
-            .foregroundColor: UIColor(red: 0.099, green: 0.721, blue: 0.47, alpha: 1),
+            .foregroundColor: UIColor.blackClr,
             .underlineStyle: NSUnderlineStyle.single.rawValue
         ]
         let attributeString = NSMutableAttributedString(
@@ -82,12 +83,19 @@ class MathAndSummaryView: UIView {
             make.width.height.equalTo(Constants.defaultSize)
         }
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(imageView)
-            make.leading.equalTo(imageView.snp.trailing).offset(10)
+            make.top.equalToSuperview().offset(Constants.customTopOffset)
+            make.leading.equalToSuperview().offset(20)
         }
         button.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(10)
+            make.top.equalTo(titleLabel.snp.bottom).offset(5)
             make.leading.equalTo(titleLabel)
+        }
+        
+        crownImage.image = UIImage(named: "img_crownHome1")?.withRenderingMode(.alwaysOriginal)
+        backgroundImageView.addSubview(crownImage)
+        crownImage.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(4)
+            make.left.equalToSuperview().offset(12)
         }
     }
                

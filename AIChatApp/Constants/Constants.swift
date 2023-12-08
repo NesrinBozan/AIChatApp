@@ -19,7 +19,7 @@ public class Constants{
     public static let cornerRadius: CGFloat = 20
     public static let defaultTopOffset: CGFloat = 14
     public static let defaultSize: CGFloat = 50
-    public static let customTopOffset: CGFloat = 40
+    public static let customTopOffset: CGFloat = 20
     public static let customLeadingOffset: CGFloat = 50
           
 }
