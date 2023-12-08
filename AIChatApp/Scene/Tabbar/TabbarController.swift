@@ -22,11 +22,11 @@ final class TabbarController: UITabBarController, UITabBarControllerDelegate {
         let home = templateNavigationController(unselectedImage: UIImage(named: "btn_homeUnselected")!,
                                                 selectedImage: UIImage(named: "btn_homeSelected")!,
                                                 rootViewController: HomeVC())
-        let explore = templateNavigationController(unselectedImage: UIImage(named: "btn_photosUnselected")!,
-                                                   selectedImage: UIImage(named: "btn_photosSelected")!,
+        let explore = templateNavigationController(unselectedImage: UIImage(named: "btn_exploreUnselected")!,
+                                                   selectedImage: UIImage(named: "btn_exploreSelected")!,
                                                     rootViewController: ExploreVC())
-        let history = templateNavigationController(unselectedImage: UIImage(named: "btn_videosUnselected")!,
-                                                    selectedImage: UIImage(named: "btn_videosSelected")!,
+        let history = templateNavigationController(unselectedImage: UIImage(named: "btn_historyUnselected")!,
+                                                    selectedImage: UIImage(named: "btn_historySelected")!,
                                                       rootViewController: HistoryVC())
         viewControllers = [home, explore, history, ]
     }
@@ -41,6 +41,8 @@ final class TabbarController: UITabBarController, UITabBarControllerDelegate {
         nav.tabBarItem.imageInsets = UIEdgeInsets(top: 12, left: 0, bottom: -12, right: 0)
         tabBar.backgroundColor = #colorLiteral(red: 0.9796730876, green: 0.9796730876, blue: 0.9796730876, alpha: 1)
         tabBar.layer.cornerRadius = 20
+        tabBar.layer.borderWidth = 1
+        tabBar.layer.borderColor = UIColor.lightGray.cgColor
         tabBar.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
         return nav
     }

@@ -13,6 +13,9 @@
 		CA643C742B208D2F0092B575 /* NeonSDK in Frameworks */ = {isa = PBXBuildFile; productRef = CA643C732B208D2F0092B575 /* NeonSDK */; };
 		CA643C772B208DBE0092B575 /* GhostTypewriter in Frameworks */ = {isa = PBXBuildFile; productRef = CA643C762B208DBE0092B575 /* GhostTypewriter */; };
 		CA643C7B2B208F170092B575 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA643C7A2B208F170092B575 /* HomeVC.swift */; };
+		CA8994152B230145000D9EED /* HomeSliderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8994142B230145000D9EED /* HomeSliderVC.swift */; };
+		CA8994172B231A4D000D9EED /* MessageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8994162B231A4D000D9EED /* MessageButton.swift */; };
+		CA89941A2B231B4B000D9EED /* TextManagementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8994192B231B4B000D9EED /* TextManagementCell.swift */; };
 		CAFF62C72B21C33F00D3CC45 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF62C62B21C33F00D3CC45 /* FirebaseManager.swift */; };
 		CAFF62C92B21C34C00D3CC45 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF62C82B21C34C00D3CC45 /* APIManager.swift */; };
 		CAFF62CB2B21C37500D3CC45 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF62CA2B21C37500D3CC45 /* UIColor+Extension.swift */; };
@@ -34,6 +37,9 @@
 		CA643C672B208BF80092B575 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA643C6C2B208BF80092B575 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA643C7A2B208F170092B575 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		CA8994142B230145000D9EED /* HomeSliderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSliderVC.swift; sourceTree = "<group>"; };
+		CA8994162B231A4D000D9EED /* MessageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageButton.swift; sourceTree = "<group>"; };
+		CA8994192B231B4B000D9EED /* TextManagementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextManagementCell.swift; sourceTree = "<group>"; };
 		CAFF62C62B21C33F00D3CC45 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		CAFF62C82B21C34C00D3CC45 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		CAFF62CA2B21C37500D3CC45 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -109,8 +115,17 @@
 			isa = PBXGroup;
 			children = (
 				CA643C7A2B208F170092B575 /* HomeVC.swift */,
+				CA8994142B230145000D9EED /* HomeSliderVC.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		CA8994182B231B37000D9EED /* HomeTableView */ = {
+			isa = PBXGroup;
+			children = (
+				CA8994192B231B4B000D9EED /* TextManagementCell.swift */,
+			);
+			path = HomeTableView;
 			sourceTree = "<group>";
 		};
 		CAFF62C22B21C2CB00D3CC45 /* Model */ = {
@@ -207,6 +222,7 @@
 		CAFF62DB2B21CAA000D3CC45 /* TableViews */ = {
 			isa = PBXGroup;
 			children = (
+				CA8994182B231B37000D9EED /* HomeTableView */,
 			);
 			path = TableViews;
 			sourceTree = "<group>";
@@ -225,6 +241,7 @@
 		CAFF62DD2B21CAB400D3CC45 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				CA8994162B231A4D000D9EED /* MessageButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -316,6 +333,7 @@
 			files = (
 				CAFF62E32B21CC2300D3CC45 /* MathAndSummaryView.swift in Sources */,
 				CAFF62C72B21C33F00D3CC45 /* FirebaseManager.swift in Sources */,
+				CA8994152B230145000D9EED /* HomeSliderVC.swift in Sources */,
 				CAFF62D92B21C66E00D3CC45 /* HistoryVC.swift in Sources */,
 				CAFF62D52B21C62B00D3CC45 /* TabbarController.swift in Sources */,
 				CA643C7B2B208F170092B575 /* HomeVC.swift in Sources */,
@@ -324,10 +342,12 @@
 				CAFF62E82B21E0E300D3CC45 /* TextInputField.swift in Sources */,
 				CAFF62CB2B21C37500D3CC45 /* UIColor+Extension.swift in Sources */,
 				CAFF62DF2B21CACE00D3CC45 /* HeaderView.swift in Sources */,
+				CA89941A2B231B4B000D9EED /* TextManagementCell.swift in Sources */,
 				CAFF62E12B21CC0F00D3CC45 /* TextManagementView.swift in Sources */,
 				CAFF62D22B21C3F800D3CC45 /* Settings.swift in Sources */,
 				CAFF62E62B21D16300D3CC45 /* Constants.swift in Sources */,
 				CA643C662B208BF70092B575 /* AIChatApp.xcdatamodeld in Sources */,
+				CA8994172B231A4D000D9EED /* MessageButton.swift in Sources */,
 				CA643C5C2B208BF70092B575 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

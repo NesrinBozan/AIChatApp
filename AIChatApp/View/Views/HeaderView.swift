@@ -34,7 +34,7 @@ class CustomHeaderView: UIView {
     }
     
     private func setupView() {
-        backgroundColor = .black
+        backgroundColor = .white
         titleLbl.textColor = .mainClr
         titleLbl.font = Font.custom(size: 24, fontWeight: .Bold)
         
@@ -48,7 +48,7 @@ class CustomHeaderView: UIView {
         titleLbl.textAlignment = .center
         imageView.addSubview(titleLbl)
         titleLbl.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(60)
+            make.top.equalToSuperview().offset(40)
             make.centerX.equalToSuperview()
         }
         
