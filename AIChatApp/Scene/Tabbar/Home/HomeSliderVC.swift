@@ -40,34 +40,54 @@ final class HomeSliderVC: UIPageViewController, UIPageViewControllerDelegate, UI
     private func mathandsummaryMediaViewController() -> UIViewController {
         
         let viewController = UIViewController()
-        let mathSolverView = MathAndSummaryView(image: UIImage(named: "btn_image"), title: "MATH SOLVER".localized(), buttonText: "Scan and solve any problem".localized(), background: UIImage(named: "img_mathSolver"), crownIsHidden: false)
+        
+        let mathSolverView = MathAndSummaryView(image: UIImage(named: "btn_image"), title: "MATH SOLVER".localized(), buttonText: "Scan and solve \n any problem".localized(), background: UIImage(named: "img_mathSolver"), crownIsHidden: false)
         
         let photoView = MathAndSummaryView(image: UIImage(named: "btn_image"), title: "What is this image about?".localized(), buttonText: "Pick a Photo".localized(), background: UIImage(named: "img_Photo"), crownIsHidden: false)
         
         let urlView = MathAndSummaryView(image: UIImage(named: "btn_web"), title: "Summarize Web Page".localized(), buttonText: "Add URL".localized(), background: UIImage(named: "img_url"), crownIsHidden: true)
         
         let fileView = MathAndSummaryView(image: UIImage(named: "btn_file"), title: "Summarize Pdf File".localized(), buttonText: "Pick a File".localized(), background: UIImage(named: "img_file"), crownIsHidden: true)
-        
-        let stackView = UIStackView(arrangedSubviews: [mathSolverView, photoView, urlView, fileView])
-        stackView.axis = .vertical
-        stackView.spacing = 20
-        
-        viewController.view.addSubview(stackView)
-        
-        stackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20))
+                
+        let views = [mathSolverView, photoView, urlView, fileView]
+
+         var previousView: UIView?
+         
+         for (index, view) in views.enumerated() {
+             viewController.view.addSubview(view)
+             
+             view.snp.makeConstraints { make in
+                 if let previousView = previousView {
+                     make.top.equalTo(previousView.snp.bottom).offset(20)
+                 } else {
+                     make.top.equalTo(viewController.view.safeAreaLayoutGuide.snp.top).offset(20)
+                 }
+                 make.left.right.equalToSuperview().inset(20)
+                 make.height.equalTo(index == 0 ? 140 : 100)
+             }
+             previousView = view
+         }
+         
+         return viewController
+     }
+
+    private func textManagementViewController() -> UIViewController {
+        let viewController = UIViewController()
+
+        let textManagementTableView = TextManagementTableView()
+        textManagementTableView.homeVC = self 
+
+
+        viewController.view.addSubview(textManagementTableView)
+
+     
+        textManagementTableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
 
         return viewController
     }
-    
-    private func textManagementViewController() -> UIViewController {
-        let viewController = UIViewController()
-        
-        
-        return viewController
-        
-    }
+
 
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {

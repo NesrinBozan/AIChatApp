@@ -13,6 +13,7 @@ final class HomeVC: UIViewController, NeonBasePageControlDelegate {
 
     let textInputView = TextInputView(frame: .zero, showLeftButton: true)
     let headerView = CustomHeaderView(pageTitle: "MathSolver & GPT".localized(), showLeftButton: false, showRightButton: true)
+    let exampleBtn = NeonButton()
     static let pageControl = NeonPageControlV2()
     
     
@@ -41,13 +42,22 @@ final class HomeVC: UIViewController, NeonBasePageControlDelegate {
             make.trailing.equalTo(view.snp.trailing)
             make.height.equalTo(60)
         }
+        exampleBtn.backgroundColor = .red
+        exampleBtn.setTitle("btn", for: .normal)
         
+        view.addSubview(textInputView)
+        textInputView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-136)
+            make.height.equalTo(65)
+        }
+
         view.addSubview(HomeVC.pageControl)
         HomeVC.pageControl.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalToSuperview().offset(-96)
-            make.width.equalTo(12)
-            make.height.equalTo(12)
+            make.width.equalTo(6)
+            make.height.equalTo(6)
         }
         HomeVC.pageControl.currentPageTintColor = .mainClr
         HomeVC.pageControl.tintColor = .lightGray
@@ -57,16 +67,6 @@ final class HomeVC: UIViewController, NeonBasePageControlDelegate {
         HomeVC.pageControl.enableTouchEvents = true
         HomeVC.pageControl.delegate = self
         
-        
-        
-//        view.addSubview(textInputView)
-//
-//        textInputView.snp.makeConstraints { make in
-//            make.left.equalToSuperview().offset(14)
-//            make.right.equalToSuperview().offset(-14)
-//            make.bottom.equalToSuperview().offset(-100)
-//            make.height.equalTo(68)
-//        }
     }
     
     @objc func rightButtonTapped(){
@@ -84,7 +84,7 @@ final class HomeVC: UIViewController, NeonBasePageControlDelegate {
         sliderViewController.view.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(headerView.snp.bottom)
-            make.bottom.equalToSuperview().offset(-140)
+            make.bottom.equalTo(textInputView.snp.top).offset(-5)
         }
         
     }

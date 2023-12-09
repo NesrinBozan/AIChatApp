@@ -9,7 +9,6 @@ import UIKit
 import CoreData
 import NeonSDK
 import Firebase
-
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     

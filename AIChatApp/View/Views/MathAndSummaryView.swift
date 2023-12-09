@@ -40,7 +40,10 @@ class MathAndSummaryView: UIView {
     private func configure(image: UIImage? = nil, title: String? = nil, buttonText: String? = nil, background: UIImage? = nil) {
         imageView.image = image
         titleLabel.text = title
+        button.titleLabel?.numberOfLines = 2
+        button.titleLabel?.lineBreakMode = .byWordWrapping
         button.setTitle(buttonText, for: .normal)
+        backgroundImageView.contentMode = .scaleAspectFill
         backgroundImageView.image = background
 
         styleTitleLabel()
@@ -57,7 +60,7 @@ class MathAndSummaryView: UIView {
 
     private func styleButton() {
         let attributes: [NSAttributedString.Key: Any] = [
-            .font: Font.custom(size: 14, fontWeight: .Bold),
+            .font: Font.custom(size: 14, fontWeight: .Regular),
             .foregroundColor: UIColor.blackClr,
             .underlineStyle: NSUnderlineStyle.single.rawValue
         ]
