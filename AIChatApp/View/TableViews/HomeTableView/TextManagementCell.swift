@@ -13,7 +13,7 @@ class TextManagementCell: UITableViewCell {
     var textView: TextManagementView
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        textView = TextManagementView(vc: nil)
+        textView = TextManagementView(type: Category.CategoryType.Explain, vc: nil)
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setupView()
@@ -26,7 +26,7 @@ class TextManagementCell: UITableViewCell {
     private func setupView() {
         contentView.addSubview(textView)
         backgroundColor = .whiteClr
-        textView.backgroundColor = .lightGreenClr
+        textView.backgroundColor = .whiteClr
         textView.isUserInteractionEnabled = true
         textView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(5)
@@ -34,7 +34,9 @@ class TextManagementCell: UITableViewCell {
         }
     }
     
-    func configure(with vc: HomeVC?) {
+    func configure(with type: Category.CategoryType, vc: HomeSliderVC?) {
+        textView.type = type
+        textView.viewTypeSelected()
         textView.vc = vc
         textView.onButtonTapped = { [weak vc] text, categoryTitle in
 //            vc?.chatInputView.textField.text = text
