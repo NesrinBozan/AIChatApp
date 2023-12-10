@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-class Category {
+public class Category {
     
     enum CategoryType: String, Codable, CaseIterable {
         case All, Content, Artist, Business, Personal, Email, Social, Code, Food, Entertainment, Explain, Write, Translate, WriteEmail, GetRecipes, History, DoMath,Image, Url, File
