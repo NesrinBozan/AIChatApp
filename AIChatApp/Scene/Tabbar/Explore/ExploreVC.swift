@@ -9,21 +9,39 @@ import UIKit
 
 class ExploreVC: UIViewController {
 
+    private let sectionCollectionView: SectionCollectionView! = nil
+    let headerView = CustomHeaderView(pageTitle: "MathSolver & GPT".localized(), showLeftButton: false, showRightButton: true)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+      setupView()
     }
     
+    
+ 
+    
+    func setupView(){
+        
+        headerView.rightBtn.setImage(UIImage(named: "btn_settings"), for: .normal)
+//        headerView.rightBtn.addTarget(self, action: #selector(rightButtonTapped), for: .touchUpInside)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        view.addSubview(headerView)
+        headerView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.leading.equalTo(view.snp.leading)
+            make.trailing.equalTo(view.snp.trailing)
+            make.height.equalTo(60)
+        }
+        view.addSubview(sectionCollectionView)
+        sectionCollectionView.backgroundColor = .whiteClr
+        sectionCollectionView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(headerView.snp.bottom).offset(30)
+            make.height.equalTo(50)
+        }
+        
     }
-    */
+
 
 }
