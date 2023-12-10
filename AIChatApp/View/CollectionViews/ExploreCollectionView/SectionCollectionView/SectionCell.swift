@@ -19,7 +19,9 @@ class SectionCell: NeonCollectionViewCell<Section> {
 
     lazy var titleLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .lightGrayClr
         label.textAlignment = .center
+        label.font = Font.custom(size: 10, fontWeight: .Regular)
         label.numberOfLines = 0
         return label
     }()
@@ -52,9 +54,9 @@ class SectionCell: NeonCollectionViewCell<Section> {
 
     override func configure(with object: Section) {
         super.configure(with: object)
-        imageView.image = object.isSelected ? object.selectedImage : object.unSelectedimage
+        imageView.image = object.isSelected ?? false ? object.selectedImage : object.unSelectedimage
         titleLabel.text = object.title
-        titleLabel.textColor = object.isSelected ? .mainClr : .lightGrayClr
+        titleLabel.textColor = object.isSelected ?? false ? .mainClr : .lightGrayClr
     }
 }
 

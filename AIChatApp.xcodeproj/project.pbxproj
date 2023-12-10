@@ -24,6 +24,9 @@
 		CAEF220D2B25908400C34862 /* SectionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEF220C2B25908400C34862 /* SectionCollectionView.swift */; };
 		CAEF220F2B2594C600C34862 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEF220E2B2594C600C34862 /* Globals.swift */; };
 		CAEF22112B2596C400C34862 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEF22102B2596C400C34862 /* History.swift */; };
+		CAEF22162B259F4800C34862 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEF22152B259F4800C34862 /* CategoryCell.swift */; };
+		CAEF22192B259F8500C34862 /* CategoryAllCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEF22182B259F8500C34862 /* CategoryAllCollectionView.swift */; };
+		CAEF221B2B259F9100C34862 /* CategoryCollecitonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEF221A2B259F9100C34862 /* CategoryCollecitonView.swift */; };
 		CAFF62C72B21C33F00D3CC45 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF62C62B21C33F00D3CC45 /* FirebaseManager.swift */; };
 		CAFF62C92B21C34C00D3CC45 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF62C82B21C34C00D3CC45 /* APIManager.swift */; };
 		CAFF62CB2B21C37500D3CC45 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF62CA2B21C37500D3CC45 /* UIColor+Extension.swift */; };
@@ -56,6 +59,9 @@
 		CAEF220C2B25908400C34862 /* SectionCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCollectionView.swift; sourceTree = "<group>"; };
 		CAEF220E2B2594C600C34862 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		CAEF22102B2596C400C34862 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		CAEF22152B259F4800C34862 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		CAEF22182B259F8500C34862 /* CategoryAllCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAllCollectionView.swift; sourceTree = "<group>"; };
+		CAEF221A2B259F9100C34862 /* CategoryCollecitonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollecitonView.swift; sourceTree = "<group>"; };
 		CAFF62C62B21C33F00D3CC45 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		CAFF62C82B21C34C00D3CC45 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		CAFF62CA2B21C37500D3CC45 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -144,6 +150,34 @@
 				CAEF22062B24C30700C34862 /* TextManagementTableView.swift */,
 			);
 			path = HomeTableView;
+			sourceTree = "<group>";
+		};
+		CAEF22122B259EE600C34862 /* ExploreCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				CAEF22142B259F3500C34862 /* CategoryCollectionView */,
+				CAEF22132B259F1800C34862 /* SectionCollectionView */,
+			);
+			path = ExploreCollectionView;
+			sourceTree = "<group>";
+		};
+		CAEF22132B259F1800C34862 /* SectionCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				CAEF220A2B25905B00C34862 /* SectionCell.swift */,
+				CAEF220C2B25908400C34862 /* SectionCollectionView.swift */,
+			);
+			path = SectionCollectionView;
+			sourceTree = "<group>";
+		};
+		CAEF22142B259F3500C34862 /* CategoryCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				CAEF22152B259F4800C34862 /* CategoryCell.swift */,
+				CAEF22182B259F8500C34862 /* CategoryAllCollectionView.swift */,
+				CAEF221A2B259F9100C34862 /* CategoryCollecitonView.swift */,
+			);
+			path = CategoryCollectionView;
 			sourceTree = "<group>";
 		};
 		CAFF62C22B21C2CB00D3CC45 /* Model */ = {
@@ -237,8 +271,7 @@
 		CAFF62DA2B21CA9600D3CC45 /* CollectionViews */ = {
 			isa = PBXGroup;
 			children = (
-				CAEF220A2B25905B00C34862 /* SectionCell.swift */,
-				CAEF220C2B25908400C34862 /* SectionCollectionView.swift */,
+				CAEF22122B259EE600C34862 /* ExploreCollectionView */,
 			);
 			path = CollectionViews;
 			sourceTree = "<group>";
@@ -371,6 +404,7 @@
 				CAFF62DF2B21CACE00D3CC45 /* HeaderView.swift in Sources */,
 				CAEF220F2B2594C600C34862 /* Globals.swift in Sources */,
 				CA89941A2B231B4B000D9EED /* TextManagementCell.swift in Sources */,
+				CAEF22192B259F8500C34862 /* CategoryAllCollectionView.swift in Sources */,
 				CAFF62E12B21CC0F00D3CC45 /* TextManagementView.swift in Sources */,
 				CAEF22072B24C30700C34862 /* TextManagementTableView.swift in Sources */,
 				CAEF22092B258FD800C34862 /* Section.swift in Sources */,
@@ -378,6 +412,8 @@
 				CAEF220D2B25908400C34862 /* SectionCollectionView.swift in Sources */,
 				CAFF62E62B21D16300D3CC45 /* Constants.swift in Sources */,
 				CA643C662B208BF70092B575 /* AIChatApp.xcdatamodeld in Sources */,
+				CAEF221B2B259F9100C34862 /* CategoryCollecitonView.swift in Sources */,
+				CAEF22162B259F4800C34862 /* CategoryCell.swift in Sources */,
 				CAEF22052B24C1BE00C34862 /* Message.swift in Sources */,
 				CA8994172B231A4D000D9EED /* MessageButton.swift in Sources */,
 				CA643C5C2B208BF70092B575 /* AppDelegate.swift in Sources */,
