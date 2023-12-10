@@ -45,12 +45,12 @@ final class HomeVC: UIViewController, NeonBasePageControlDelegate {
         exampleBtn.backgroundColor = .red
         exampleBtn.setTitle("btn", for: .normal)
         
-        view.addSubview(textInputView)
-        textInputView.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-136)
-            make.height.equalTo(65)
-        }
+//        view.addSubview(textInputView)
+//        textInputView.snp.makeConstraints { make in
+//            make.centerX.equalToSuperview()
+//            make.bottom.equalToSuperview().offset(-136)
+//            make.height.equalTo(65)
+//        }
 
         view.addSubview(HomeVC.pageControl)
         HomeVC.pageControl.snp.makeConstraints { make in
@@ -84,7 +84,7 @@ final class HomeVC: UIViewController, NeonBasePageControlDelegate {
         sliderViewController.view.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(headerView.snp.bottom)
-            make.bottom.equalTo(textInputView.snp.top).offset(-5)
+            make.bottom.equalToSuperview().offset(-120)
         }
         
     }
