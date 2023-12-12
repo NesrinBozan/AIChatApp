@@ -29,7 +29,9 @@ class CategoryCell: NeonCollectionViewCell<Category> {
     private func setupSubviews() {
         backgroundColor = .whiteClr
         contentView.addSubview(containerView)
-        containerView.backgroundColor = .mainClr
+        containerView.backgroundColor = .whiteClr
+        containerView.layer.borderWidth = 1
+        containerView.layer.borderColor = UIColor.mainClr.cgColor
         containerView.layer.cornerRadius = 20
         containerView.snp.makeConstraints { make in
             make.height.equalTo(172)
@@ -43,7 +45,7 @@ class CategoryCell: NeonCollectionViewCell<Category> {
             make.height.width.equalTo(50)
         }
         
-        titleLabel.textColor = .white
+        titleLabel.textColor = .blackClr
         titleLabel.numberOfLines = 1
         titleLabel.textAlignment = .left
         titleLabel.lineBreakMode = .byWordWrapping
@@ -57,12 +59,12 @@ class CategoryCell: NeonCollectionViewCell<Category> {
         }
         
         
-        descriptionLabel.textColor = .lightGrayClr
+        descriptionLabel.textColor = .exploreLightGray
         descriptionLabel.numberOfLines = 3
         descriptionLabel.textAlignment = .left
         descriptionLabel.lineBreakMode = .byWordWrapping
         descriptionLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
-        descriptionLabel.font = Font.custom(size: 13, fontWeight: .SemiBold)
+        descriptionLabel.font = Font.custom(size: 13, fontWeight: .Medium)
         containerView.addSubview(descriptionLabel)
         descriptionLabel.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(8)

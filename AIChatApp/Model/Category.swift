@@ -12,7 +12,7 @@ import UIKit
 public class Category {
     
     enum CategoryType: String, Codable, CaseIterable {
-        case All, Content, Artist, Business, Personal, Email, Social, Code, Food, Entertainment, Explain, Write, Translate, WriteEmail, GetRecipes, History, DoMath,Image, Url, File
+        case All, Content, Artist, Business, Personal, Email, Social, Code, Food, Entertainment, Explain, Write, Translate, WriteEmail, GetRecipes, History, DoMath,Image, Url, File, Name , Dream
     }
     enum HomeCategoryType: String, Codable, CaseIterable {
       case Explain, Write, Translate, WriteEmail, GetRecipes, History, DoMath

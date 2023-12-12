@@ -21,7 +21,7 @@ class SectionCell: NeonCollectionViewCell<Section> {
         let label = UILabel()
         label.textColor = .lightGrayClr
         label.textAlignment = .center
-        label.font = Font.custom(size: 10, fontWeight: .Regular)
+        label.font = Font.custom(size: 12, fontWeight: .Regular)
         label.numberOfLines = 0
         return label
     }()
@@ -41,12 +41,12 @@ class SectionCell: NeonCollectionViewCell<Section> {
 
         imageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(5)
-            make.width.height.equalTo(60)
+            make.top.equalToSuperview()
+            make.width.height.equalTo(64)
         }
 
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom).offset(5)
+            make.top.equalTo(imageView.snp.bottom)
             make.centerX.equalToSuperview()
             make.bottom.equalToSuperview().offset(-5)
         }
