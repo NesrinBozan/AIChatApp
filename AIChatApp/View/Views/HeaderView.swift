@@ -48,7 +48,7 @@ class CustomHeaderView: UIView {
         titleLbl.textAlignment = .center
         imageView.addSubview(titleLbl)
         titleLbl.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(40)
+            make.bottom.equalToSuperview().offset(-14)
             make.centerX.equalToSuperview()
         }
         
@@ -56,7 +56,7 @@ class CustomHeaderView: UIView {
             addSubview(leftBtn)
             leftBtn.snp.makeConstraints { make in
                 make.centerY.equalTo(titleLbl)
-                make.leading.equalToSuperview().offset(20)
+                make.leading.equalToSuperview().offset(10)
             }
         }
         
@@ -64,7 +64,7 @@ class CustomHeaderView: UIView {
             addSubview(rightBtn)
             rightBtn.snp.makeConstraints { make in
                 make.centerY.equalTo(titleLbl)
-                make.trailing.equalToSuperview().offset(-20)
+                make.trailing.equalToSuperview().offset(-10)
             }
         }
     }
