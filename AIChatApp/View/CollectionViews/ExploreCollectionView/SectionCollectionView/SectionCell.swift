@@ -54,9 +54,18 @@ class SectionCell: NeonCollectionViewCell<Section> {
 
     override func configure(with object: Section) {
         super.configure(with: object)
-        imageView.image = object.isSelected ?? false ? object.selectedImage : object.unSelectedimage
+        
+        if let isSelected = object.isSelected {
+            imageView.image = isSelected ? object.selectedImage : object.unSelectedimage
+            titleLabel.textColor = isSelected ? .mainClr : .lightGrayClr
+        } else {
+            imageView.image = object.unSelectedimage
+            titleLabel.textColor = .lightGrayClr
+        }
+        
         titleLabel.text = object.title
-        titleLabel.textColor = object.isSelected ?? false ? .mainClr : .lightGrayClr
     }
+
+
 }
 
