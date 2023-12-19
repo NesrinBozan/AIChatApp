@@ -33,7 +33,7 @@ final class HomeVC: UIViewController, NeonBasePageControlDelegate {
 
         headerView.rightBtn.setImage(UIImage(named: "btn_settings"), for: .normal)
         headerView.rightBtn.addTarget(self, action: #selector(rightButtonTapped), for: .touchUpInside)
-
+       
         
         view.addSubview(headerView)
         headerView.snp.makeConstraints { make in

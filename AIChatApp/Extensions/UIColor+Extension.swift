@@ -18,5 +18,8 @@ extension UIColor {
     static let lightGrayClr = UIColor(red: 0.322, green: 0.322, blue: 0.322, alpha: 1)
     static let lightGray = UIColor(red: 0.851, green: 0.851, blue: 0.851, alpha: 1)
     static let exploreLightGray = UIColor(red: 0.518, green: 0.518, blue: 0.518, alpha: 1)
+    static let borderColor = UIColor(red: 0.804, green: 0.804, blue: 0.804, alpha: 1)
+    static let lightWhiteClr = UIColor(red: 0.996, green: 0.996, blue: 0.996, alpha: 1)
+    static let ultraLightGrayClr = UIColor(red: 0.945, green: 0.945, blue: 0.945, alpha: 1)
     
 }

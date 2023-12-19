@@ -48,7 +48,7 @@ class CustomHeaderView: UIView {
         titleLbl.textAlignment = .center
         imageView.addSubview(titleLbl)
         titleLbl.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().offset(-14)
+            make.bottom.equalToSuperview().offset(-18)
             make.centerX.equalToSuperview()
         }
         
