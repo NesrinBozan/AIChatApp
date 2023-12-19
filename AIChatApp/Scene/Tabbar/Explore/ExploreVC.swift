@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import NeonSDK
 
 class ExploreVC: UIViewController {
-
+    private var sections: [String] = []
     private var sectionCollectionView: SectionCollectionView! = nil
     private var exploreSectionCollectionView: CategoryCollectionView!
     private var filteredCategory: [Category] = []
+    private var categoryAllTableView: UITableView!
+    var didSelect: ((String, IndexPath) -> Void)?
     let headerView = CustomHeaderView(pageTitle: "MathSolver & GPT".localized(), showLeftButton: false, showRightButton: true)
     
     override func viewDidLoad() {
@@ -45,7 +48,7 @@ class ExploreVC: UIViewController {
         exploreSectionCollectionView.backgroundColor = .whiteClr
         
        let sectionCollectionView = SectionCollectionView(didSelect: { section, indexPath in
-           print("aaaaa")
+           print(section.title)
            print(section.isSelected)
            print(section.selectedImage)
            for type in Category.CategoryType.allCases{
@@ -53,7 +56,7 @@ class ExploreVC: UIViewController {
                    self.filteredCategory = self.filterCategoryCollectionView(section: type )
                }
            }
-       
+           self.configureVisibleCollection(section: section)
            self.exploreSectionCollectionView.objects = self.filteredCategory
        })
 
@@ -74,7 +77,22 @@ class ExploreVC: UIViewController {
             make.bottom.equalToSuperview().offset(-120)
                 }
         
+        categoryAllTableView = UITableView(frame: .zero, style: .grouped)
+        view.addSubview(categoryAllTableView)
+        categoryAllTableView.delegate = self
+        categoryAllTableView.dataSource = self
+        categoryAllTableView.register(CatgeoryCell.self, forCellReuseIdentifier: CatgeoryCell.identifier)
+        categoryAllTableView.separatorStyle = .none
+        categoryAllTableView.backgroundColor = .whiteClr
+
+        categoryAllTableView.snp.makeConstraints { make in
+            make.top.equalTo(sectionCollectionView.snp.bottom).offset(20)
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-120)
+        }
     }
+    
     func setupData() {
         
         let allSection = Section(title: "All",isSelected: false,unSelectedimage: UIImage(named: "icon_all_unSelected")!, selectedImage: UIImage(named: "icon_all_selected")!)
@@ -83,14 +101,15 @@ class ExploreVC: UIViewController {
         let businessSection = Section(title: "Business", isSelected: false,unSelectedimage: UIImage(named: "icon_business_unSelected")!, selectedImage: UIImage(named: "icon_business_selected")!)
         let contentSection = Section(title: "Content", isSelected: false,unSelectedimage: UIImage(named: "icon_content_unSelected")!, selectedImage: UIImage(named: "icon_content_selected")!)
         let artistSection = Section(title: "Artist", isSelected: false,unSelectedimage: UIImage(named: "icon_artist_unSelected")!, selectedImage: UIImage(named: "icon_artist_selected")!)
+        let codeSection =  Section(title: "Code", isSelected: false,unSelectedimage: UIImage(named: "icon_code_unselected")!, selectedImage: UIImage(named: "icon_code_selected")!)
         let emailSection = Section(title: "Email",isSelected: false, unSelectedimage: UIImage(named: "icon_email_unSelected")!, selectedImage: UIImage(named: "icon_email_selected")!)
         let personalSection = Section(title: "Personal", isSelected: false,unSelectedimage: UIImage(named: "icon_personal_unSelected")!, selectedImage: UIImage(named: "icon_personal_selected")!)
         let socialSection = Section(title: "Social",isSelected: false, unSelectedimage: UIImage(named: "icon_social_unSelected")!, selectedImage: UIImage(named: "icon_social_selected")!)
         let foodSection = Section(title: "Food", isSelected: false,unSelectedimage: UIImage(named: "icon_food_unSelected")!, selectedImage: UIImage(named: "icon_food_selected")!)
         let entertainmentSection = Section(title: "Entertaintment", isSelected: false,unSelectedimage: UIImage(named: "icon_entertainment_unSelected")!, selectedImage: UIImage(named: "icon_entertaintment_selected")!)
         
-         Globals.arrSection = [allSection, nameSection, dreamSection, businessSection, contentSection, artistSection, emailSection, personalSection, socialSection, foodSection, entertainmentSection]
-
+         Globals.arrSection = [allSection, nameSection, dreamSection, businessSection, contentSection, artistSection,codeSection, emailSection, personalSection, socialSection, foodSection, entertainmentSection]
+        sections = ["All", "Name", "Dream", "Business", "Content", "Artist", "Code", "Email", "Personal", "Social", "Food", "Entertainment"]
     
      }
 
@@ -105,6 +124,7 @@ class ExploreVC: UIViewController {
             Category(title: "Baby Name", description: "Generate a name for your baby.",image: UIImage(named: "icon_babyName")!, type: .Name, prompt: "", questions: [Question(text: ""), Question(text: "")])
             
         ]
+        
         let contentItems = [
             Category(title: "Write a Paragraph".localized(), description: "Generate well-written paragraphs on any given subject".localized(), image: UIImage(named: "icon_writeparagraph")!, type: .Content,prompt: "I want you to be a paragraph writer. Your objective is to skillfully craft concise and coherent paragraphs that support a central idea, provide relevant evidence, and effectively convey information to the reader. Each paragraph should exhibit logical progression, offer strong supporting details, and employ cohesive language to ensure clarity and coherence within the text.",  questions: [
                 Question(text: "What is the main subject or topic that the paragraph focuses on?".localized()),
@@ -234,11 +254,11 @@ class ExploreVC: UIViewController {
         ]
         
         let codeItems = [
-            Category(title: "Write Code".localized(), description: "Write simple webpages and applications in various programming languages".localized(), image: UIImage(named: "icon_all_selected")!, type: .Code, prompt: "I want you to be a code writer. Your objective is to thoroughly research a given problem, construct a clear and efficient algorithm, and write code that effectively solves the problem and captivates the reader. Your code should showcase a depth of knowledge, utilize well-supported programming techniques, and employ clear and concise language to maintain the reader's interest throughout the piece.",questions: [
+            Category(title: "Write Code".localized(), description: "Write simple webpages and applications in various programming languages".localized(), image: UIImage(named: "icon_writeCode")!, type: .Code, prompt: "I want you to be a code writer. Your objective is to thoroughly research a given problem, construct a clear and efficient algorithm, and write code that effectively solves the problem and captivates the reader. Your code should showcase a depth of knowledge, utilize well-supported programming techniques, and employ clear and concise language to maintain the reader's interest throughout the piece.",questions: [
                 Question(text: "Which programming language are you using?".localized()),
                 Question(text: "What is the main objective of your code?".localized())
             ]),
-            Category(title: "Explain Code".localized(), description: "Explain a complicated piece of code".localized(), image: UIImage(named: "icon_all_selected")!, type: .Code,prompt: "I want you to be a code explainer. Your objective is to thoroughly research a specific programming concept, construct a clear and compelling explanation, and compose a persuasive description that effectively informs and engages the reader.",questions: [
+            Category(title: "Explain Code".localized(), description: "Explain a complicated piece of code".localized(), image: UIImage(named: "icon_explainCode")!, type: .Code,prompt: "I want you to be a code explainer. Your objective is to thoroughly research a specific programming concept, construct a clear and compelling explanation, and compose a persuasive description that effectively informs and engages the reader.",questions: [
                 Question(text: "What is the code to be explained?".localized()),
                 Question(text: "How long should the description be?".localized())
             ]),
@@ -295,10 +315,69 @@ class ExploreVC: UIViewController {
 
 }
 
-extension ExploreVC {
+extension ExploreVC: UITableViewDelegate, UITableViewDataSource{
     func filterCategoryCollectionView(section: Category.CategoryType) -> [Category]{
         var filteredCategory: [Category] = []
         filteredCategory = section == .All ? Globals.arrCategory :  Globals.arrCategory.filter({$0.type == section})
         return filteredCategory
+    }
+    
+    func configureVisibleCollection(section: Section) {
+            guard let sectionTitle = section.title else {
+                return
+            }
+
+            categoryAllTableView.isHidden = sectionTitle != "All"
+            exploreSectionCollectionView.isHidden = sectionTitle == "All"
+        }
+
+    // MARK: - UITableViewDelegate & UITableViewDataSource Methods
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+           let cell = tableView.dequeueReusableCell(withIdentifier: CatgeoryCell.identifier, for: indexPath) as! CatgeoryCell
+        let exploreItem = Globals.arrCategory
+           let sectionIndex = indexPath.section + 1
+        
+        for type in Category.CategoryType.allCases{
+            if type.rawValue.localized() == sections[sectionIndex]{
+                cell.filterCategoryByType(type: type , category: exploreItem)
+            }
+        }
+        
+           cell.selectionStyle = .none
+           cell.didSelect = { [weak self] category in
+            guard let self else {return}
+            let exploreDetailVC = GenerateVC(category: category)
+               self.present(destinationVC: exploreDetailVC, slideDirection: .right)
+        }
+           return cell
+       }
+       
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sections.count - 1
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+            let titleLabel = UILabel()
+            let sectionIndex = section + 1
+            titleLabel.text = "     \(sections[sectionIndex])"
+            titleLabel.textAlignment = .left
+            titleLabel.textColor = .blackClr
+            titleLabel.font = Font.custom(size: 20, fontWeight: .SemiBold)
+        titleLabel.frame = CGRect(x: 24, y: 0, width: 100, height: 50)
+            return titleLabel
+        }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
     }
 }
