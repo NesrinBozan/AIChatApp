@@ -103,37 +103,37 @@ class TextManagementView: UIView {
             titleLabel.text = "Translate".localized()
             messageButton1.updateText("How do you say “How are you” in Korea?".localized())
             messageButton2.updateText("What does ‘Vouloir c’est pouvoir...’ mean in English?".localized())
-            imageView.image = UIImage(named: "btn_translate")
+            imageView.image = UIImage(named: "img_translate")
             self.tag = 3
         case .WriteEmail:
             titleLabel.text = "Write an Email".localized()
             messageButton1.updateText("Write an email to reject client’s offer because of the hight price".localized())
             messageButton2.updateText("Write a reply for an email to accept meeting request".localized())
-            imageView.image = UIImage(named: "btn_email")
+            imageView.image = UIImage(named: "img_writeemail")
             self.tag = 4
         case .GetRecipes:
             titleLabel.text = "Get recipes".localized()
             messageButton1.updateText("How to make potato pancakes".localized())
             messageButton2.updateText("How to make pad thai".localized())
-            imageView.image = UIImage(named: "btn_getrecipes")
+            imageView.image = UIImage(named: "img_getrecipes")
             self.tag = 5
         case .History:
             titleLabel.text = "History".localized()
             messageButton1.updateText("Where was Santa born?".localized())
             messageButton2.updateText("How make the pyramids made?".localized())
-            imageView.image = UIImage(named: "btn_history")
+            imageView.image = UIImage(named: "img_history")
             self.tag = 6
         case .DoMath:
             titleLabel.text = "Do Math".localized()
             messageButton1.updateText("Solve this math problem: 3*(4)+6/(2)".localized())
             messageButton2.updateText("How can we know “pi” is a transcendental number? ".localized())
-            imageView.image = UIImage(named: "btn_doMath")
+            imageView.image = UIImage(named: "img_domath")
             self.tag = 7
         case .Social:
             titleLabel.text = "Social".localized()
             messageButton1.updateText("Write a funny tweet about cats".localized())
             messageButton2.updateText("Come up with a caption for my Instagram photo in Paris".localized())
-            imageView.image = UIImage(named: "btn_social")
+            imageView.image = UIImage(named: "img_social")
             self.tag = 8
         case .Image:
              break
@@ -167,6 +167,10 @@ class TextManagementView: UIView {
         case .Entertainment:
             break
         
+        case .Name:
+            break
+        case .Dream:
+             break
         }
     }
     
