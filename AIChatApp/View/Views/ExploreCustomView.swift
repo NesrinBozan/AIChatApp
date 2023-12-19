@@ -25,9 +25,9 @@ class ExploreCustomView: UIView {
     }
 
     private func setupView() {
-        backgroundColor = .whiteClr
-        layer.cornerRadius = 20
-
+        backgroundColor = .lightGreenClr
+        layer.cornerRadius = 15
+        
         imageView.contentMode = .scaleAspectFit
         addSubview(imageView)
 
@@ -37,26 +37,25 @@ class ExploreCustomView: UIView {
             make.width.height.equalTo(50)
         }
 
-        titleLabel.textColor = .white
+        titleLabel.textColor = .lightGrayClr
         titleLabel.font = Font.custom(size: 16, fontWeight: .SemiBold)
         addSubview(titleLabel)
 
         titleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(10)
-            make.leading.equalTo(imageView.snp.trailing).offset(20)
+            make.top.equalToSuperview().offset(20)
+            make.leading.equalTo(imageView.snp.trailing).offset(9)
             make.trailing.equalToSuperview().offset(-10)
         }
 
-        descriptionLabel.textColor = .darkBlackClr
+        descriptionLabel.textColor = UIColor(red: 0.45, green: 0.446, blue: 0.446, alpha: 1)
         descriptionLabel.font = Font.custom(size: 13, fontWeight: .SemiBold)
         descriptionLabel.numberOfLines = 0
         addSubview(descriptionLabel)
 
         descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(5)
+            make.top.equalTo(titleLabel.snp.bottom).offset(7)
             make.leading.equalTo(titleLabel)
             make.trailing.equalToSuperview().offset(-10)
-            make.bottom.equalToSuperview().offset(-10)
         }
     }
 
