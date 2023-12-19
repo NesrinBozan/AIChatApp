@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import NeonSDK
 
-class CategoryCollectionView: NeonCollectionView<Category, CategoryCell> {
+class CategoryCollectionView: NeonCollectionView<Category, CategoryAllCell> {
     var didSelectCategory: ((Category) -> Void)?
       
     convenience init(category: [Category] , didSelect: ((Category, IndexPath) -> Void)? = nil) {
@@ -35,7 +35,7 @@ class CategoryCollectionView: NeonCollectionView<Category, CategoryCell> {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryAllCell", for: indexPath) as! CategoryAllCell
             let category = objects[indexPath.item]
               cell.configure(with: category)
               return cell

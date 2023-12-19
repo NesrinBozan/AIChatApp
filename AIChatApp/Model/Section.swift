@@ -21,3 +21,8 @@ public class Section {
         self.selectedImage = selectedImage
     }
 }
+extension Section {
+    static func filterSections(byTitle title: String) -> [Section] {
+        return Globals.arrSection.filter { $0.title == title }
+    }
+}
