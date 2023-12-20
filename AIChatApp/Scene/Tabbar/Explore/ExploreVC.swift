@@ -28,7 +28,7 @@ class ExploreVC: UIViewController {
     func setupView(){
         view.backgroundColor = .whiteClr
         headerView.rightBtn.setImage(UIImage(named: "btn_settings"), for: .normal)
-//        headerView.rightBtn.addTarget(self, action: #selector(rightButtonTapped), for: .touchUpInside)
+        headerView.rightBtn.addTarget(self, action: #selector(rightButtonTapped), for: .touchUpInside)
 
         
         view.addSubview(headerView)
@@ -92,7 +92,9 @@ class ExploreVC: UIViewController {
             make.bottom.equalToSuperview().offset(-120)
         }
     }
-    
+    @objc func rightButtonTapped(){
+        present(destinationVC: SettingsVC(), slideDirection: .right)
+    }
     func setupData() {
         
         let allSection = Section(title: "All",isSelected: false,unSelectedimage: UIImage(named: "icon_all_unSelected")!, selectedImage: UIImage(named: "icon_all_selected")!)
