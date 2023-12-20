@@ -13,6 +13,9 @@
 		CA643C742B208D2F0092B575 /* NeonSDK in Frameworks */ = {isa = PBXBuildFile; productRef = CA643C732B208D2F0092B575 /* NeonSDK */; };
 		CA643C772B208DBE0092B575 /* GhostTypewriter in Frameworks */ = {isa = PBXBuildFile; productRef = CA643C762B208DBE0092B575 /* GhostTypewriter */; };
 		CA643C7B2B208F170092B575 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA643C7A2B208F170092B575 /* HomeVC.swift */; };
+		CA8142152B32E50000500E4B /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8142142B32E50000500E4B /* SettingsCell.swift */; };
+		CA8142182B32F9E400500E4B /* SettingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8142172B32F9E400500E4B /* SettingsTableView.swift */; };
+		CA81421A2B32FA2500500E4B /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8142192B32FA2500500E4B /* Settings.swift */; };
 		CA8994152B230145000D9EED /* HomeSliderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8994142B230145000D9EED /* HomeSliderVC.swift */; };
 		CA8994172B231A4D000D9EED /* MessageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8994162B231A4D000D9EED /* MessageButton.swift */; };
 		CA89941A2B231B4B000D9EED /* TextManagementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8994192B231B4B000D9EED /* TextManagementCell.swift */; };
@@ -34,7 +37,7 @@
 		CAFF62C72B21C33F00D3CC45 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF62C62B21C33F00D3CC45 /* FirebaseManager.swift */; };
 		CAFF62C92B21C34C00D3CC45 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF62C82B21C34C00D3CC45 /* APIManager.swift */; };
 		CAFF62CB2B21C37500D3CC45 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF62CA2B21C37500D3CC45 /* UIColor+Extension.swift */; };
-		CAFF62D22B21C3F800D3CC45 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF62D12B21C3F800D3CC45 /* Settings.swift */; };
+		CAFF62D22B21C3F800D3CC45 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF62D12B21C3F800D3CC45 /* SettingsVC.swift */; };
 		CAFF62D52B21C62B00D3CC45 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF62D42B21C62B00D3CC45 /* TabbarController.swift */; };
 		CAFF62D72B21C64F00D3CC45 /* ExploreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF62D62B21C64F00D3CC45 /* ExploreVC.swift */; };
 		CAFF62D92B21C66E00D3CC45 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF62D82B21C66E00D3CC45 /* HistoryVC.swift */; };
@@ -52,6 +55,9 @@
 		CA643C672B208BF80092B575 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA643C6C2B208BF80092B575 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA643C7A2B208F170092B575 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		CA8142142B32E50000500E4B /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		CA8142172B32F9E400500E4B /* SettingsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableView.swift; sourceTree = "<group>"; };
+		CA8142192B32FA2500500E4B /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		CA8994142B230145000D9EED /* HomeSliderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSliderVC.swift; sourceTree = "<group>"; };
 		CA8994162B231A4D000D9EED /* MessageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageButton.swift; sourceTree = "<group>"; };
 		CA8994192B231B4B000D9EED /* TextManagementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextManagementCell.swift; sourceTree = "<group>"; };
@@ -73,7 +79,7 @@
 		CAFF62C62B21C33F00D3CC45 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		CAFF62C82B21C34C00D3CC45 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		CAFF62CA2B21C37500D3CC45 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		CAFF62D12B21C3F800D3CC45 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		CAFF62D12B21C3F800D3CC45 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		CAFF62D42B21C62B00D3CC45 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		CAFF62D62B21C64F00D3CC45 /* ExploreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreVC.swift; sourceTree = "<group>"; };
 		CAFF62D82B21C66E00D3CC45 /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
@@ -151,6 +157,15 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		CA8142162B32F9CE00500E4B /* SettingsTableView */ = {
+			isa = PBXGroup;
+			children = (
+				CA8142142B32E50000500E4B /* SettingsCell.swift */,
+				CA8142172B32F9E400500E4B /* SettingsTableView.swift */,
+			);
+			path = SettingsTableView;
+			sourceTree = "<group>";
+		};
 		CA8994182B231B37000D9EED /* HomeTableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +211,7 @@
 				CAEF22042B24C1BE00C34862 /* Message.swift */,
 				CAEF22082B258FD800C34862 /* Section.swift */,
 				CAEF22102B2596C400C34862 /* History.swift */,
+				CA8142192B32FA2500500E4B /* Settings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -248,7 +264,7 @@
 		CAFF62CE2B21C3D800D3CC45 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				CAFF62D12B21C3F800D3CC45 /* Settings.swift */,
+				CAFF62D12B21C3F800D3CC45 /* SettingsVC.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -289,6 +305,7 @@
 		CAFF62DB2B21CAA000D3CC45 /* TableViews */ = {
 			isa = PBXGroup;
 			children = (
+				CA8142162B32F9CE00500E4B /* SettingsTableView */,
 				CA8994182B231B37000D9EED /* HomeTableView */,
 			);
 			path = TableViews;
@@ -406,6 +423,7 @@
 				CA98288C2B31E24200806F45 /* ContinueButton.swift in Sources */,
 				CA8994152B230145000D9EED /* HomeSliderVC.swift in Sources */,
 				CA9828882B31A41B00806F45 /* CategoryCell.swift in Sources */,
+				CA81421A2B32FA2500500E4B /* Settings.swift in Sources */,
 				CAFF62D92B21C66E00D3CC45 /* HistoryVC.swift in Sources */,
 				CAFF62D52B21C62B00D3CC45 /* TabbarController.swift in Sources */,
 				CA98288A2B31B5E100806F45 /* ExploreCustomView.swift in Sources */,
@@ -420,13 +438,15 @@
 				CAEF220F2B2594C600C34862 /* Globals.swift in Sources */,
 				CA89941A2B231B4B000D9EED /* TextManagementCell.swift in Sources */,
 				CAEF22192B259F8500C34862 /* CategoryAllCollectionView.swift in Sources */,
+				CA8142152B32E50000500E4B /* SettingsCell.swift in Sources */,
 				CAFF62E12B21CC0F00D3CC45 /* TextManagementView.swift in Sources */,
 				CAEF22072B24C30700C34862 /* TextManagementTableView.swift in Sources */,
 				CAEF22092B258FD800C34862 /* Section.swift in Sources */,
-				CAFF62D22B21C3F800D3CC45 /* Settings.swift in Sources */,
+				CAFF62D22B21C3F800D3CC45 /* SettingsVC.swift in Sources */,
 				CAF959FC2B2896DC0017FD47 /* GenerateVC.swift in Sources */,
 				CAEF220D2B25908400C34862 /* SectionCollectionView.swift in Sources */,
 				CAFF62E62B21D16300D3CC45 /* Constants.swift in Sources */,
+				CA8142182B32F9E400500E4B /* SettingsTableView.swift in Sources */,
 				CA643C662B208BF70092B575 /* AIChatApp.xcdatamodeld in Sources */,
 				CAEF221B2B259F9100C34862 /* CategoryCollecitonView.swift in Sources */,
 				CAEF22162B259F4800C34862 /* CategoryAllCell.swift in Sources */,
