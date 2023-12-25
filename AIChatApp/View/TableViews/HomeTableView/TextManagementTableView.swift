@@ -47,7 +47,7 @@ class TextManagementTableView: UITableView, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! TextManagementCell
             let type = chooseViewTypes[indexPath.row]
-            cell.configure(with: type, vc: homeVC!)
+            cell.configure(with: type, vc: homeVC)
             cell.selectionStyle = .none
             return cell
         

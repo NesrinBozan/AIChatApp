@@ -37,11 +37,11 @@ class TextManagementCell: UITableViewCell {
     func configure(with type: Category.CategoryType, vc: HomeSliderVC?) {
         textView.type = type
         textView.viewTypeSelected()
-        textView.vc = vc
         textView.onButtonTapped = { [weak vc] text, categoryTitle in
-//            vc?.chatInputView.textField.text = text
-//            vc?.selectedCategoryFromHome = categoryTitle
-//            vc?.chatInputView.rightButton.setImage(UIImage(named: "new_btn_send"), for: .normal)
-        }
+            vc!.textInputView.textField.text = text
+            vc!.textInputView.rightButton.setImage(UIImage(named: "btn_send"), for: .normal)
     }
+
+    }
+
     }
