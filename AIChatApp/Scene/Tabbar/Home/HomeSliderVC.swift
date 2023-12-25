@@ -10,9 +10,8 @@ import UIKit
 import NeonSDK
 
 final class HomeSliderVC: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
-   
+    var textInputView = TextInputView(frame: .zero, showLeftButton: true)
     private var orderedViewControllers: [UIViewController] = []
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .whiteClr
@@ -75,14 +74,12 @@ final class HomeSliderVC: UIPageViewController, UIPageViewControllerDelegate, UI
         let viewController = UIViewController()
 
         let textManagementTableView = TextManagementTableView()
-        textManagementTableView.homeVC = self 
-
-
+        textManagementTableView.homeVC = self
+        
         viewController.view.addSubview(textManagementTableView)
-
-     
         textManagementTableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.left.right.top.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-124)
         }
 
         return viewController

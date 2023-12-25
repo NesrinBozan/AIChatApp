@@ -86,10 +86,10 @@ class ExploreVC: UIViewController {
         categoryAllTableView.backgroundColor = .whiteClr
 
         categoryAllTableView.snp.makeConstraints { make in
-            make.top.equalTo(sectionCollectionView.snp.bottom).offset(20)
+            make.top.equalTo(sectionCollectionView.snp.bottom)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-120)
+            make.bottom.equalToSuperview().offset(-86)
         }
     }
     @objc func rightButtonTapped(){

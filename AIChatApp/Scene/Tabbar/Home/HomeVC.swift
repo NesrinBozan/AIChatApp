@@ -11,7 +11,6 @@ import NeonSDK
 
 final class HomeVC: UIViewController, NeonBasePageControlDelegate {
 
-    let textInputView = TextInputView(frame: .zero, showLeftButton: true)
     let headerView = CustomHeaderView(pageTitle: "MathSolver & GPT".localized(), showLeftButton: false, showRightButton: true)
     let exampleBtn = NeonButton()
     static let pageControl = NeonPageControlV2()
@@ -42,23 +41,6 @@ final class HomeVC: UIViewController, NeonBasePageControlDelegate {
             make.trailing.equalTo(view.snp.trailing)
             make.height.equalTo(60)
         }
-        exampleBtn.backgroundColor = .red
-        exampleBtn.setTitle("btn", for: .normal)
-        
-//        view.addSubview(textInputView)
-//        textInputView.snp.makeConstraints { make in
-//            make.centerX.equalToSuperview()
-//            make.bottom.equalToSuperview().offset(-136)
-//            make.height.equalTo(65)
-//        }
-
-        view.addSubview(HomeVC.pageControl)
-        HomeVC.pageControl.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-96)
-            make.width.equalTo(6)
-            make.height.equalTo(6)
-        }
         HomeVC.pageControl.currentPageTintColor = .mainClr
         HomeVC.pageControl.tintColor = .lightGray
         HomeVC.pageControl.padding = 10
@@ -84,7 +66,22 @@ final class HomeVC: UIViewController, NeonBasePageControlDelegate {
         sliderViewController.view.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(headerView.snp.bottom)
-            make.bottom.equalToSuperview().offset(-120)
+            make.bottom.equalToSuperview().offset(-90)
+        }
+        
+        sliderViewController.view.addSubview(sliderViewController.textInputView)
+        sliderViewController.textInputView.backgroundColor = .white
+        sliderViewController.textInputView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(24)
+            make.bottom.equalToSuperview().offset(-16)
+            make.height.equalTo(65)
+        }
+        sliderViewController.view.addSubview(HomeVC.pageControl)
+        HomeVC.pageControl.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(sliderViewController.textInputView.snp.top).offset(-24)
+            make.width.height.equalTo(6)
+
         }
         
     }

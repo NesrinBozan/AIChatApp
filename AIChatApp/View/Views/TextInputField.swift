@@ -46,9 +46,9 @@ class TextInputView: UIView, UIImagePickerControllerDelegate, UIDocumentPickerDe
         layer.borderColor = UIColor.mainClr.cgColor
         cancelButton.setImage(UIImage(named: "cancel_btn"), for: .normal)
         leftButton.setImage(UIImage(named: "btn_add"), for: .normal)
-        rightButton.setImage(UIImage(named: "btn_send"), for: .normal)
-        textField.textColor = .white
-        let placeholderText =  "Say something...".localized()
+        rightButton.setImage(UIImage(named: "btn_sendunselect"), for: .normal)
+        textField.textColor = .blackClr
+        let placeholderText =  "Write a message ...".localized()
         let placeholderColor = UIColor.grayClr
         let attributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: placeholderColor,
@@ -102,7 +102,7 @@ class TextInputView: UIView, UIImagePickerControllerDelegate, UIDocumentPickerDe
     }
 
     @objc private func textFieldDidChange(_ textField: UITextField) {
-        let newButtonImage: UIImage? = isTextFieldEmpty ? UIImage(named: "btn_send") : UIImage(named: "new_btn_send")
+        let newButtonImage: UIImage? = isTextFieldEmpty ? UIImage(named: "btn_sendunselect") : UIImage(named: "btn_send")
         rightButton.setImage(newButtonImage, for: .normal)
         
         let textHeight = textField.sizeThatFits(CGSize(width: textField.bounds.width, height: CGFloat.greatestFiniteMagnitude)).height
@@ -142,9 +142,9 @@ class TextInputView: UIView, UIImagePickerControllerDelegate, UIDocumentPickerDe
          leftButton.isEnabled = false
         let newRightButtonImage: UIImage?
          if leftButton.image(for: .normal) != UIImage(named: "btn_file") {
-             newRightButtonImage = UIImage(named: "new_btn_send")
-         } else {
              newRightButtonImage = UIImage(named: "btn_send")
+         } else {
+             newRightButtonImage = UIImage(named: "btn_sendunselect")
          }
          rightButton.setImage(newRightButtonImage, for: .normal)
      }
