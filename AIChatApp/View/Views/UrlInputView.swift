@@ -14,7 +14,6 @@ class URLInputView: UIView {
     private var addButton: NeonButton?
     private var cancelButton: UIButton?
     private var urlLine: UIImageView?
-
     var onAddButtonTapped: ((String) -> Void)?
     var onCancelButtonTapped: (() -> Void)?
 
@@ -28,18 +27,18 @@ class URLInputView: UIView {
     }
 
     private func setupView() {
-        backgroundColor = .black
+        backgroundColor = .whiteClr
         layer.cornerRadius = 10
 
         let titleLabel = NeonLabel(frame: .zero)
         titleLabel.text = "Paste or type link".localized()
-        titleLabel.textColor = .white
+        titleLabel.textColor = .blackClr
         titleLabel.textAlignment = .center
         titleLabel.font = Font.custom(size: 20, fontWeight: .SemiBold)
 
         urlTextField = NeonTextField(frame: .zero)
         urlTextField?.borderStyle = .roundedRect
-        urlTextField?.backgroundColor = .black
+        urlTextField?.backgroundColor = .whiteClr
         urlTextField?.textColor = .white
         urlLine = UIImageView(image: UIImage(named: "img_line"))
 
@@ -112,29 +111,3 @@ class URLInputView: UIView {
 }
 
 
-/*
- @objc func urlButtonTapped() {
-     addBlurView()
-     
-     let urlInputView = URLInputView()
-     urlInputView.onAddButtonTapped = { [weak self] url in
-         // Handle URL addition
-         self?.handleURLAddition(url)
-     }
-     
-     urlInputView.onCancelButtonTapped = { [weak self] in
-         // Handle URL addition cancellation
-         self?.cancelURLAddition()
-     }
-     
-     chatInputView.cancelButton.isHidden = false
-     view.addSubview(urlInputView)
-
-     urlInputView.snp.makeConstraints { make in
-         make.leading.trailing.equalToSuperview()
-         make.bottom.equalToSuperview()
-         make.height.equalTo(320)
-     }
- }
-
- */

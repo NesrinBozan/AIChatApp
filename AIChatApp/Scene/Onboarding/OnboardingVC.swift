@@ -29,11 +29,11 @@ class OnboardingVC: UIViewController{
                                              pageViewController: pageViewController! ,sliderName: "slider1")
         let page2 = BaseOnboardingVC(imageName: "img_onboarding2",
                                              titleText: "Describe",
-                                             subtitleText: "Choose or snap a photo, and let our application craft concise and vivid descriptions, bringing your memories to life.",
+                                             subtitleText: "Capture a photo, let our app craft vivid descriptions, bringing your memories to life.",
                                              pageViewController: pageViewController!,  sliderName: "slider2")
         let page3 = BaseOnboardingVC(imageName: "img_onboarding3",
                                              titleText: "Multiple Possibilities",
-                                             subtitleText: "Designed to simplify your daily tasks, encompassing email writing, code explanation, and a multitude of additional functionalities.",
+                                             subtitleText: "Designed for simplicity in daily tasks, including email writing, code explanation, and more.",
                                              pageViewController: pageViewController!, sliderName: "slider3")
 
         onboardingPages.append(page1)
