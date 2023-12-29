@@ -19,6 +19,9 @@
 		CA8994152B230145000D9EED /* HomeSliderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8994142B230145000D9EED /* HomeSliderVC.swift */; };
 		CA8994172B231A4D000D9EED /* MessageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8994162B231A4D000D9EED /* MessageButton.swift */; };
 		CA89941A2B231B4B000D9EED /* TextManagementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8994192B231B4B000D9EED /* TextManagementCell.swift */; };
+		CA906A3B2B3DCC1F00EBB1B5 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA906A3A2B3DCC1F00EBB1B5 /* OnboardingVC.swift */; };
+		CA906A3D2B3DCC7900EBB1B5 /* BaseOnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA906A3C2B3DCC7900EBB1B5 /* BaseOnboardingVC.swift */; };
+		CA906A3F2B3DCCC800EBB1B5 /* PaywallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA906A3E2B3DCCC800EBB1B5 /* PaywallVC.swift */; };
 		CA9828882B31A41B00806F45 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9828872B31A41B00806F45 /* CategoryCell.swift */; };
 		CA98288A2B31B5E100806F45 /* ExploreCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9828892B31B5E100806F45 /* ExploreCustomView.swift */; };
 		CA98288C2B31E24200806F45 /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA98288B2B31E24200806F45 /* ContinueButton.swift */; };
@@ -63,6 +66,9 @@
 		CA8994142B230145000D9EED /* HomeSliderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSliderVC.swift; sourceTree = "<group>"; };
 		CA8994162B231A4D000D9EED /* MessageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageButton.swift; sourceTree = "<group>"; };
 		CA8994192B231B4B000D9EED /* TextManagementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextManagementCell.swift; sourceTree = "<group>"; };
+		CA906A3A2B3DCC1F00EBB1B5 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		CA906A3C2B3DCC7900EBB1B5 /* BaseOnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOnboardingVC.swift; sourceTree = "<group>"; };
+		CA906A3E2B3DCCC800EBB1B5 /* PaywallVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallVC.swift; sourceTree = "<group>"; };
 		CA9828872B31A41B00806F45 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		CA9828892B31B5E100806F45 /* ExploreCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCustomView.swift; sourceTree = "<group>"; };
 		CA98288B2B31E24200806F45 /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
@@ -276,6 +282,8 @@
 		CAFF62CF2B21C3DE00D3CC45 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				CA906A3A2B3DCC1F00EBB1B5 /* OnboardingVC.swift */,
+				CA906A3C2B3DCC7900EBB1B5 /* BaseOnboardingVC.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -283,6 +291,7 @@
 		CAFF62D02B21C3E700D3CC45 /* Paywal */ = {
 			isa = PBXGroup;
 			children = (
+				CA906A3E2B3DCCC800EBB1B5 /* PaywallVC.swift */,
 			);
 			path = Paywal;
 			sourceTree = "<group>";
@@ -423,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA906A3D2B3DCC7900EBB1B5 /* BaseOnboardingVC.swift in Sources */,
 				CAFF62E32B21CC2300D3CC45 /* MathAndSummaryView.swift in Sources */,
 				CAFF62C72B21C33F00D3CC45 /* FirebaseManager.swift in Sources */,
 				CAAD74AB2B3314D6009C4027 /* EmptyChatView.swift in Sources */,
@@ -437,11 +447,13 @@
 				CA643C7B2B208F170092B575 /* HomeVC.swift in Sources */,
 				CAFF62D72B21C64F00D3CC45 /* ExploreVC.swift in Sources */,
 				CAFF62C92B21C34C00D3CC45 /* APIManager.swift in Sources */,
+				CA906A3F2B3DCCC800EBB1B5 /* PaywallVC.swift in Sources */,
 				CAFF62E82B21E0E300D3CC45 /* TextInputField.swift in Sources */,
 				CAEF22112B2596C400C34862 /* History.swift in Sources */,
 				CAFF62CB2B21C37500D3CC45 /* UIColor+Extension.swift in Sources */,
 				CAE04F432B39AC2000798BBA /* UrlInputView.swift in Sources */,
 				CAEF220B2B25905B00C34862 /* SectionCell.swift in Sources */,
+				CA906A3B2B3DCC1F00EBB1B5 /* OnboardingVC.swift in Sources */,
 				CAFF62DF2B21CACE00D3CC45 /* HeaderView.swift in Sources */,
 				CAEF220F2B2594C600C34862 /* Globals.swift in Sources */,
 				CA89941A2B231B4B000D9EED /* TextManagementCell.swift in Sources */,
