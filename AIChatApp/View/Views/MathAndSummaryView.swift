@@ -12,7 +12,7 @@ import NeonSDK
 class MathAndSummaryView: UIView {
     private let imageView = NeonImageView()
     private let titleLabel = NeonLabel()
-    private let button = NeonButton()
+     let button = NeonButton()
     private let backgroundImageView = NeonImageView()
     private let crownImage = UIImageView()
 
@@ -51,6 +51,7 @@ class MathAndSummaryView: UIView {
        
         setupBackgroundImageViewConstraints()
         setupConstraints()
+        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
     }
 
     private func styleTitleLabel() {
@@ -77,6 +78,9 @@ class MathAndSummaryView: UIView {
         backgroundImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+    }
+    @objc private func buttonTapped() {
+        print("Button tapped!")
     }
 
     private func setupConstraints() {

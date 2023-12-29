@@ -10,6 +10,7 @@ import UIKit
 import NeonSDK
 
 final class HomeSliderVC: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
+    weak var mediaButtonDelegate: MediaButtonDelegate?
     var textInputView = TextInputView(frame: .zero, showLeftButton: true)
     private var orderedViewControllers: [UIViewController] = []
     override func viewDidLoad() {
@@ -47,7 +48,11 @@ final class HomeSliderVC: UIPageViewController, UIPageViewControllerDelegate, UI
         let urlView = MathAndSummaryView(image: UIImage(named: "btn_web"), title: "Summarize Web Page".localized(), buttonText: "Add URL".localized(), background: UIImage(named: "img_url"), crownIsHidden: true)
         
         let fileView = MathAndSummaryView(image: UIImage(named: "btn_file"), title: "Summarize Pdf File".localized(), buttonText: "Pick a File".localized(), background: UIImage(named: "img_file"), crownIsHidden: true)
-                
+           
+        photoView.button.addTarget(self, action: #selector(photoButtonTapped), for: .touchUpInside)
+        fileView.button.addTarget(self, action: #selector(fileButtonTapped), for: .touchUpInside)
+        urlView.button.addTarget(self, action: #selector(urlButtonTapped), for: .touchUpInside)
+
         let views = [mathSolverView, photoView, urlView, fileView]
 
          var previousView: UIView?
@@ -121,6 +126,21 @@ final class HomeSliderVC: UIPageViewController, UIPageViewControllerDelegate, UI
         
         return orderedViewControllers[nextIndex]
     }
+    @objc private func photoButtonTapped() {
+        mediaButtonDelegate?.photoButtonTapped()
+    }
+
+    @objc private func fileButtonTapped() {
+        mediaButtonDelegate?.fileButtonTapped()
+    }
+    @objc private func urlButtonTapped() {
+        mediaButtonDelegate?.urlButtonTapped()
+    }
+
     
 }
-
+protocol MediaButtonDelegate: AnyObject {
+    func photoButtonTapped()
+    func fileButtonTapped()
+    func urlButtonTapped()
+}
