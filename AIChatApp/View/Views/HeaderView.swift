@@ -11,18 +11,16 @@ import NeonSDK
 
 class CustomHeaderView: UIView {
     
-    var pageTitle: String?
     var showLeftButton: Bool = false
     var showRightButton: Bool = false
     
     var imageView = UIImageView()
-    var titleLbl = NeonLabel()
+    var logoImage = UIImageView()
     var leftBtn = NeonButton()
     var rightBtn = NeonButton()
     
     init(pageTitle: String?, showLeftButton: Bool, showRightButton: Bool) {
         super.init(frame: .zero)
-        self.pageTitle = pageTitle
         self.showLeftButton = showLeftButton
         self.showRightButton = showRightButton
         setupView()
@@ -35,38 +33,40 @@ class CustomHeaderView: UIView {
     
     private func setupView() {
         backgroundColor = .white
-        titleLbl.textColor = .mainClr
-        titleLbl.font = Font.custom(size: 24, fontWeight: .Bold)
-        
         addSubview(imageView)
         imageView.image = UIImage(named: "Header")
         imageView.snp.makeConstraints { make in
             make.bottom.leading.trailing.equalToSuperview()
         }
-        
-        titleLbl.text = pageTitle
-        titleLbl.textAlignment = .center
-        imageView.addSubview(titleLbl)
-        titleLbl.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().offset(-18)
-            make.centerX.equalToSuperview()
-        }
-        
+        logoImage.image = UIImage(named: "img_logo")
         if showLeftButton {
+            addSubview(logoImage)
+            logoImage.snp.makeConstraints { make in
+                make.centerX.equalToSuperview()
+                make.bottom.equalToSuperview().offset(-18)
+            }
+            
             addSubview(leftBtn)
             leftBtn.snp.makeConstraints { make in
-                make.centerY.equalTo(titleLbl)
-                make.leading.equalToSuperview().offset(10)
+                make.centerY.equalTo(logoImage)
+                make.leading.equalToSuperview().offset(24)
+            }
+        } else {
+            addSubview(logoImage)
+            logoImage.snp.makeConstraints { make in
+                make.bottom.equalToSuperview().offset(-18)
+                make.leading.equalToSuperview().offset(24)
             }
         }
         
         if showRightButton {
             addSubview(rightBtn)
             rightBtn.snp.makeConstraints { make in
-                make.centerY.equalTo(titleLbl)
-                make.trailing.equalToSuperview().offset(-10)
+                make.bottom.equalToSuperview().offset(-10)
+                make.right.equalToSuperview().offset(-24)
             }
         }
     }
+
     
 }

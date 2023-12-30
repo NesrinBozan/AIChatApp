@@ -35,10 +35,10 @@ final class HomeVC: UIViewController, NeonBasePageControlDelegate, MediaButtonDe
         view.backgroundColor = .white
         headerView.rightBtn.setImage(UIImage(named: "btn_settings"), for: .normal)
         headerView.rightBtn.addTarget(self, action: #selector(rightButtonTapped), for: .touchUpInside)
-       
+        headerView.backgroundColor = .whiteClr
         view.addSubview(headerView)
         headerView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.top.equalToSuperview().offset(70)
             make.leading.equalTo(view.snp.leading)
             make.trailing.equalTo(view.snp.trailing)
             make.height.equalTo(60)
