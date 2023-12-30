@@ -48,9 +48,6 @@ class ExploreVC: UIViewController {
         exploreSectionCollectionView.backgroundColor = .whiteClr
         
        let sectionCollectionView = SectionCollectionView(didSelect: { section, indexPath in
-           print(section.title)
-           print(section.isSelected)
-           print(section.selectedImage)
            for type in Category.CategoryType.allCases{
                if type.rawValue == section.title{
                    self.filteredCategory = self.filterCategoryCollectionView(section: type )
