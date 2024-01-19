@@ -18,6 +18,7 @@ final class HomeVC: UIViewController, NeonBasePageControlDelegate, MediaButtonDe
     let documentPicker = UIDocumentPickerViewController(documentTypes: ["public.item"], in: .import)
     let exampleBtn = NeonButton()
     static let pageControl = NeonPageControlV2()
+    var urlInputView = URLInputView()
     
     
     override func viewDidLoad() {
@@ -36,6 +37,7 @@ final class HomeVC: UIViewController, NeonBasePageControlDelegate, MediaButtonDe
         headerView.rightBtn.setImage(UIImage(named: "btn_settings"), for: .normal)
         headerView.rightBtn.addTarget(self, action: #selector(rightButtonTapped), for: .touchUpInside)
         headerView.backgroundColor = .whiteClr
+        headerView.proButton.addTarget(self, action: #selector(proButtonTapped), for: .touchUpInside)
         view.addSubview(headerView)
         headerView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(70)
@@ -51,6 +53,10 @@ final class HomeVC: UIViewController, NeonBasePageControlDelegate, MediaButtonDe
         HomeVC.pageControl.enableTouchEvents = true
         HomeVC.pageControl.delegate = self
         
+    }
+    
+    @objc func proButtonTapped() {
+        present(destinationVC: PaywallVC(), slideDirection: .up)
     }
     
     @objc func rightButtonTapped(){
@@ -99,7 +105,6 @@ final class HomeVC: UIViewController, NeonBasePageControlDelegate, MediaButtonDe
         presentAlertControllerForFileTypeSelection()
     }
     func urlButtonTapped() {
-        let urlInputView = URLInputView()
         urlInputView.onAddButtonTapped = { [weak self] url in
 //            self?.handleURLAddition(url)
         }
@@ -117,6 +122,13 @@ final class HomeVC: UIViewController, NeonBasePageControlDelegate, MediaButtonDe
                    make.height.equalTo(320)
                }
            }
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissURLInputView))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
+    }
+
+    @objc func dismissURLInputView() {
+        urlInputView.removeFromSuperview()
     }
     
     func presentAlerForImageTypeSelection() {
@@ -172,7 +184,6 @@ final class HomeVC: UIViewController, NeonBasePageControlDelegate, MediaButtonDe
 extension HomeVC: UIImagePickerControllerDelegate & UINavigationControllerDelegate, UIDocumentPickerDelegate, AVCapturePhotoCaptureDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
      
-
     }
     
     func presentPicker(for type: PickerType) {

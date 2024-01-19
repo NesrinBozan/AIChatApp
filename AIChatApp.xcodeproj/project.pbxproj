@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA0B074C2B5A91C100E1D9AC /* PaywallButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0B074B2B5A91C100E1D9AC /* PaywallButton.swift */; };
+		CA0B074E2B5A927600E1D9AC /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0B074D2B5A927600E1D9AC /* PaddingLabel.swift */; };
 		CA643C5C2B208BF70092B575 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA643C5B2B208BF70092B575 /* AppDelegate.swift */; };
 		CA643C662B208BF70092B575 /* AIChatApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CA643C642B208BF70092B575 /* AIChatApp.xcdatamodeld */; };
 		CA643C682B208BF80092B575 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA643C672B208BF80092B575 /* Assets.xcassets */; };
@@ -55,6 +57,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA0B074B2B5A91C100E1D9AC /* PaywallButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallButton.swift; sourceTree = "<group>"; };
+		CA0B074D2B5A927600E1D9AC /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		CA643C582B208BF70092B575 /* AIChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA643C5B2B208BF70092B575 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA643C652B208BF70092B575 /* AIChatApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AIChatApp.xcdatamodel; sourceTree = "<group>"; };
@@ -245,6 +249,7 @@
 				CAFF62DC2B21CAA800D3CC45 /* Views */,
 				CAFF62DB2B21CAA000D3CC45 /* TableViews */,
 				CAFF62DA2B21CA9600D3CC45 /* CollectionViews */,
+				CA0B074D2B5A927600E1D9AC /* PaddingLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -346,6 +351,7 @@
 			children = (
 				CA8994162B231A4D000D9EED /* MessageButton.swift */,
 				CA98288B2B31E24200806F45 /* ContinueButton.swift */,
+				CA0B074B2B5A91C100E1D9AC /* PaywallButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -460,12 +466,14 @@
 				CA906A3B2B3DCC1F00EBB1B5 /* OnboardingVC.swift in Sources */,
 				CAFF62DF2B21CACE00D3CC45 /* HeaderView.swift in Sources */,
 				CAEF220F2B2594C600C34862 /* Globals.swift in Sources */,
+				CA0B074C2B5A91C100E1D9AC /* PaywallButton.swift in Sources */,
 				CA89941A2B231B4B000D9EED /* TextManagementCell.swift in Sources */,
 				CAEF22192B259F8500C34862 /* CategoryAllCollectionView.swift in Sources */,
 				CA8142152B32E50000500E4B /* SettingsCell.swift in Sources */,
 				CAFF62E12B21CC0F00D3CC45 /* TextManagementView.swift in Sources */,
 				CAEF22072B24C30700C34862 /* TextManagementTableView.swift in Sources */,
 				CAEF22092B258FD800C34862 /* Section.swift in Sources */,
+				CA0B074E2B5A927600E1D9AC /* PaddingLabel.swift in Sources */,
 				CAFF62D22B21C3F800D3CC45 /* SettingsVC.swift in Sources */,
 				CAF959FC2B2896DC0017FD47 /* GenerateVC.swift in Sources */,
 				CAEF220D2B25908400C34862 /* SectionCollectionView.swift in Sources */,

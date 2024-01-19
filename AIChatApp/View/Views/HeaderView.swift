@@ -16,6 +16,7 @@ class CustomHeaderView: UIView {
     
     var imageView = UIImageView()
     var logoImage = UIImageView()
+    let proButton = UIButton()
     var leftBtn = NeonButton()
     var rightBtn = NeonButton()
     
@@ -65,8 +66,20 @@ class CustomHeaderView: UIView {
                 make.bottom.equalToSuperview().offset(-10)
                 make.right.equalToSuperview().offset(-24)
             }
+            proButton.backgroundColor = .mainClr
+            proButton.setImage(UIImage(named: "img_pro2"), for: .normal)
+            proButton.layer.cornerRadius = 13
+            addSubview(proButton)
+            proButton.snp.makeConstraints { make in
+                make.centerY.equalTo(logoImage)
+                make.height.equalTo(30)
+                make.width.equalTo(66)
+                make.right.equalTo(rightBtn.snp.left).offset(-5)
+            }
+                  
         }
     }
+    
 
     
 }
