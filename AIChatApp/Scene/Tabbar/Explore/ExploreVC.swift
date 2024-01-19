@@ -29,7 +29,7 @@ class ExploreVC: UIViewController {
         view.backgroundColor = .whiteClr
         headerView.rightBtn.setImage(UIImage(named: "btn_settings"), for: .normal)
         headerView.rightBtn.addTarget(self, action: #selector(rightButtonTapped), for: .touchUpInside)
-
+        headerView.proButton.addTarget(self, action: #selector(proButtonTapped), for: .touchUpInside)
         
         view.addSubview(headerView)
         headerView.snp.makeConstraints { make in
@@ -91,6 +91,10 @@ class ExploreVC: UIViewController {
     }
     @objc func rightButtonTapped(){
         present(destinationVC: SettingsVC(), slideDirection: .right)
+    }
+    
+    @objc func proButtonTapped() {
+        present(destinationVC: PaywallVC(), slideDirection: .up)
     }
     func setupData() {
         

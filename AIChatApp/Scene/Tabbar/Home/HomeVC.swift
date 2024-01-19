@@ -37,6 +37,7 @@ final class HomeVC: UIViewController, NeonBasePageControlDelegate, MediaButtonDe
         headerView.rightBtn.setImage(UIImage(named: "btn_settings"), for: .normal)
         headerView.rightBtn.addTarget(self, action: #selector(rightButtonTapped), for: .touchUpInside)
         headerView.backgroundColor = .whiteClr
+        headerView.proButton.addTarget(self, action: #selector(proButtonTapped), for: .touchUpInside)
         view.addSubview(headerView)
         headerView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(70)
@@ -52,6 +53,10 @@ final class HomeVC: UIViewController, NeonBasePageControlDelegate, MediaButtonDe
         HomeVC.pageControl.enableTouchEvents = true
         HomeVC.pageControl.delegate = self
         
+    }
+    
+    @objc func proButtonTapped() {
+        present(destinationVC: PaywallVC(), slideDirection: .up)
     }
     
     @objc func rightButtonTapped(){
