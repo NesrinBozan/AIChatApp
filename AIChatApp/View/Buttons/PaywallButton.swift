@@ -70,7 +70,7 @@ class PaywallButton: UIButton {
     
     private func updateTitleLabel() {
         let mainTitleFont = Font.custom(size: 15, fontWeight: .Medium)
-        let mainTitleColor = Globals.isDarkModeEnabled ? UIColor.clrWhite : UIColor.clrBlack
+        let mainTitleColor = UIColor.blackClr
         let mainTitleAttributes: [NSAttributedString.Key: Any] = [
             .font: mainTitleFont,
             .foregroundColor: mainTitleColor
@@ -79,7 +79,7 @@ class PaywallButton: UIButton {
         let mainTitle = NSAttributedString(string: mainTitleString, attributes: mainTitleAttributes)
         
         let subtitleFont = Font.custom(size: 12, fontWeight: .Regular)
-        let subtitleColor = UIColor.clrGray // Replace with the desired color
+        let subtitleColor = UIColor.grayClr // Replace with the desired color
         let subtitleAttributes: [NSAttributedString.Key: Any] = [
             .font: subtitleFont,
             .foregroundColor: subtitleColor
@@ -101,12 +101,12 @@ class PaywallButton: UIButton {
         layer.cornerRadius = 12
         layer.borderWidth = 2
         layer.borderColor = UIColor.clear.cgColor
-        backgroundColor = Globals.isDarkModeEnabled ? .clrBlueDark : .clrBlueLight
+        backgroundColor = .mainClr
     }
     
     private func updateButtonAppearance() {
         if isSelected {
-            layer.borderColor = UIColor.clrBluePrimary.cgColor
+            layer.borderColor = UIColor.mainClr.cgColor
             circleView.isHidden = false
         } else {
             layer.borderColor = UIColor.clear.cgColor
@@ -116,7 +116,7 @@ class PaywallButton: UIButton {
     }
     
     private func addCircleView() {
-        circleView.layer.borderColor = UIColor.clrBluePrimary.cgColor
+        circleView.layer.borderColor = UIColor.mainClr.cgColor
         circleView.layer.borderWidth = 1
         circleView.layer.cornerRadius = circleSize / 2
         circleView.isHidden = true
@@ -130,7 +130,7 @@ class PaywallButton: UIButton {
         
         let dotSize = circleSize - 8
         let dotView = UIView()
-        dotView.backgroundColor = UIColor.clrBluePrimary
+        dotView.backgroundColor = UIColor.mainClr
         dotView.layer.cornerRadius = dotSize / 2
         circleView.addSubview(dotView)
         dotView.snp.makeConstraints { make in
@@ -144,7 +144,7 @@ class PaywallButton: UIButton {
     }
     
     private func addBestSellerLabel() {
-        bestSellerLabel.text = AdaptyConstants.bestSellerLabelText
+        bestSellerLabel.text = "AdaptyConstants.bestSellerLabelText"
         bestSellerLabel.topInset = 4
         bestSellerLabel.bottomInset = 4
         bestSellerLabel.leftInset = 10
@@ -152,7 +152,7 @@ class PaywallButton: UIButton {
         bestSellerLabel.font = Font.custom(size: 12, fontWeight: .SemiBold)
         bestSellerLabel.textColor = .white
         bestSellerLabel.textAlignment = .center
-        bestSellerLabel.backgroundColor = .clrBluePrimary
+        bestSellerLabel.backgroundColor = .mainClr
         bestSellerLabel.layer.cornerRadius = 4.0
         bestSellerLabel.clipsToBounds = true
         guard let superview = self.superview else {

@@ -19,17 +19,17 @@ class PaywallVC: UIViewController {
     var completionAfterShowingPaywall : (() -> ())?
     override func viewDidLoad() {
         super.viewDidLoad()
-        AdaptyManager.selectedPaywall = AdaptyManager.getPaywall(id: "paywall_1")
+//        AdaptyManager.selectedPaywall = AdaptyManager.getPaywall(id: "paywall_1")
         createUI()
-        packageFetched()
+//        packageFetched()
         Neon.onboardingCompleted()
-        if let paywall = AdaptyManager.selectedPaywall{
+//        if let paywall = AdaptyManager.selectedPaywall{
 //            Adapty.logShowPaywall(paywall)
-        }
+//        }
     }
     
     func createUI(){
-
+        view.backgroundColor = .whiteClr
         let backgroundImage = UIImageView()
 //        backgroundImage.image =  Globals.isDarkModeEnabled ?  UIImage(named: "paywall_1_background_dark") : UIImage(named: "paywall_1_background_light")
         view.addSubview(backgroundImage)
@@ -39,7 +39,7 @@ class PaywallVC: UIViewController {
         }
         
         titleLabel.textAlignment = .center
-        titleLabel.text = AdaptyConstants.titleLabelTextWhenWeeklySelected*
+        titleLabel.text = AdaptyConstants.titleLabelTextWhenWeeklySelected
         titleLabel.numberOfLines = 2
         titleLabel.font = Font.custom(size: 30, fontWeight: .SemiBold)
 //        titleLabel.textColor = Globals.isDarkModeEnabled ? .clrWhite : .clrBlack
@@ -62,10 +62,10 @@ class PaywallVC: UIViewController {
         }
         
     
-        testemonialView.testimonialTextColor = Globals.isDarkModeEnabled ?  .clrWhite : .clrBlack
-        testemonialView.testimonialbackgroundColor = Globals.isDarkModeEnabled ?  .clrBlueDark : .clrBlueLight
-        testemonialView.currentTestimonialPageTintColor = .clrBluePrimary
-        testemonialView.testimonialPageTintColor = .clrGray
+        testemonialView.testimonialTextColor = .blackClr
+        testemonialView.testimonialbackgroundColor = .mainClr
+        testemonialView.currentTestimonialPageTintColor = .blue
+        testemonialView.testimonialPageTintColor = .grayClr
         testemonialView.testimonialbackgroundCornerRadious = 12
         testemonialView.pageControlType = .V1
         
@@ -84,7 +84,7 @@ class PaywallVC: UIViewController {
                 
             }
         }
-        legalView.textColor = Globals.isDarkModeEnabled ? .clrWhite : .clrBlack
+        legalView.textColor = .blackClr
         view.addSubview(legalView)
         legalView.snp.makeConstraints { make in
             make.bottom.left.right.equalToSuperview()
@@ -94,11 +94,11 @@ class PaywallVC: UIViewController {
       
         btnBuy.setTitle(AdaptyConstants.ctaButtonTextWhenWeeklySelected, for: .normal)
         btnBuy.titleLabel?.font = Font.custom(size: 16, fontWeight: .SemiBold)
-        btnBuy.backgroundColor = .clrBluePrimary
-        btnBuy.setTitleColor(.clrWhite, for: .normal)
+        btnBuy.backgroundColor = .blue
+        btnBuy.setTitleColor(.whiteClr, for: .normal)
         btnBuy.layer.cornerRadius = 12
-        btnBuy.bouncingScale = AdaptyConstants.ctaButtonBouncedScale
-        btnBuy.bouncingDuration = AdaptyConstants.ctaButtonBouncingDuration
+//        btnBuy.bouncingScale = AdaptyConstants.ctaButtonBouncedScale
+//        btnBuy.bouncingDuration = AdaptyConstants.ctaButtonBouncingDuration
         btnBuy.addTarget(self, action: #selector(btnBuyClicked), for: .touchUpInside)
         view.addSubview(btnBuy)
         btnBuy.snp.makeConstraints { make in
@@ -112,7 +112,7 @@ class PaywallVC: UIViewController {
         lblFreeTrial.text = "Enable Free Trial"
         lblFreeTrial.numberOfLines = 1
         lblFreeTrial.font = Font.custom(size: 15, fontWeight: .Medium)
-        lblFreeTrial.textColor = Globals.isDarkModeEnabled ? .clrWhite : .clrBlack
+        lblFreeTrial.textColor = .blackClr
         view.addSubview(lblFreeTrial)
         lblFreeTrial.snp.makeConstraints { make in
             make.bottom.equalTo(btnBuy.snp.top).offset(-30)
@@ -130,7 +130,7 @@ class PaywallVC: UIViewController {
             
         }
      
-        btnLifetime.title = "Lifetime - \(AdaptyManager.getPackagePrice(id: Constants.lifetimeProductID)) billed once"
+        btnLifetime.title = "Lifetime - \(AdaptyManager.getPackagePrice(id: "Constants.lifetimeProductID")) billed once"
         btnLifetime.subtitle = "Unlock Premium Features"
         view.addSubview(btnLifetime)
         btnLifetime.snp.makeConstraints { make in
@@ -139,13 +139,13 @@ class PaywallVC: UIViewController {
             make.height.equalTo(65)
         }
         btnLifetime.clickCompletion = { [self] in
-            AdaptyManager.selectPackage(id: Constants.lifetimeProductID)
+            AdaptyManager.selectPackage(id: "Constants.lifetimeProductID")
             titleLabel.text = AdaptyConstants.titleLabelTextWhenLifetimeSelected
             btnBuy.setTitle(AdaptyConstants.ctaButtonTextWhenLifetimeSelected, for: .normal)
             switchFreeTrial.setOn(false, animated: true)
         }
       
-        btnWeekly.title = "\(AdaptyManager.getPackagePrice(id: Constants.weeklyProductID)) per week"
+        btnWeekly.title = "\(AdaptyManager.getPackagePrice(id: "Constants.weeklyProductID")) per week"
         btnWeekly.subtitle = "3-day free trial"
         btnWeekly.isSelected = true
         view.addSubview(btnWeekly)
@@ -156,7 +156,7 @@ class PaywallVC: UIViewController {
             make.height.equalTo(65)
         }
         btnWeekly.clickCompletion = { [self] in
-            AdaptyManager.selectPackage(id: Constants.weeklyProductID)
+            AdaptyManager.selectPackage(id: "Constants.weeklyProductID")
             titleLabel.text = AdaptyConstants.titleLabelTextWhenWeeklySelected
             btnBuy.setTitle(AdaptyConstants.ctaButtonTextWhenWeeklySelected, for: .normal)
             switchFreeTrial.setOn(true, animated: true)
@@ -164,9 +164,9 @@ class PaywallVC: UIViewController {
         
         
         let featuresView = NeonPaywallFeaturesView()
-        featuresView.featureTextColor = Globals.isDarkModeEnabled ? .clrWhite : .clrBlack
-        featuresView.featureIconBackgroundColor = .clrBluePrimary
-        featuresView.featureIconTintColor = .clrWhite
+        featuresView.featureTextColor = .blackClr
+        featuresView.featureIconBackgroundColor = .blue
+        featuresView.featureIconTintColor = .whiteClr
         view.addSubview(featuresView)
         featuresView.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
@@ -196,7 +196,7 @@ class PaywallVC: UIViewController {
     
     @objc func btnBuyClicked(){
         if AdaptyManager.selectedPackage == nil{
-            AdaptyManager.selectPackage(id: Constants.weeklyProductID)
+            AdaptyManager.selectPackage(id: "Constants.weeklyProductID")
         }
         AdaptyManager.subscribe(animation: .custom(name: "cleaning") ,animationWidth: 300) { [self] in
             if canDismiss && !isSenderSettings{
@@ -210,7 +210,7 @@ class PaywallVC: UIViewController {
 
     }
     func createAnimatedViews(){
-        let sparkle1 = NeonAnimationView(animation: .custom(name: "sparkle_1"), color: .clrBluePrimary)
+        let sparkle1 = NeonAnimationView(animation: .custom(name: "sparkle_1"), color: .mainClr)
         view.addSubview(sparkle1)
         sparkle1.alpha = 0.4
         sparkle1.snp.makeConstraints { make in
@@ -219,7 +219,7 @@ class PaywallVC: UIViewController {
             make.right.equalToSuperview().offset(10)
         }
         
-        let sparkle2 = NeonAnimationView(animation: .custom(name: "sparkle_2"), color: .clrBluePrimary)
+        let sparkle2 = NeonAnimationView(animation: .custom(name: "sparkle_2"), color: .mainClr)
         view.addSubview(sparkle2)
         sparkle2.alpha = 0.4
         sparkle2.snp.makeConstraints { make in
@@ -228,7 +228,7 @@ class PaywallVC: UIViewController {
             make.left.equalTo(titleLabel.snp.left).offset(-20)
         }
         
-        let sparkle3 = NeonAnimationView(animation: .custom(name: "sparkle_1"), color:  .clrBluePrimary)
+        let sparkle3 = NeonAnimationView(animation: .custom(name: "sparkle_1"), color:  .mainClr)
         view.addSubview(sparkle3)
         sparkle3.alpha = 0.4
         sparkle3.transform = CGAffineTransform(scaleX: -1, y: 1)
@@ -243,8 +243,8 @@ class PaywallVC: UIViewController {
     func createCloseButton(){
         let closeButton = UIButton()
         closeButton.setImage(UIImage(named: "paywall_close"), for: .normal)
-        let closeButtonAlpha = AdaptyConstants.closeButtonAlpha
-        closeButton.alpha = closeButtonAlpha
+//        let closeButtonAlpha = AdaptyConstants.closeButtonAlpha
+//        closeButton.alpha = closeButtonAlpha
         closeButton.addAction { [self] in
             if canDismiss{
     
@@ -259,19 +259,19 @@ class PaywallVC: UIViewController {
             }
         }
       
-        let closeButtonAppearanceDuration = AdaptyConstants.closeButtonAppearanceDuration
-        if closeButtonAppearanceDuration != 0{
-            closeButton.isHidden = true
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + closeButtonAppearanceDuration , execute: {
-            closeButton.isHidden = false
-        })
+//        let closeButtonAppearanceDuration = AdaptyConstants.closeButtonAppearanceDuration
+//        if closeButtonAppearanceDuration != 0{
+//            closeButton.isHidden = true
+//        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + closeButtonAppearanceDuration , execute: {
+//            closeButton.isHidden = false
+//        })
         view.addSubview(closeButton)
-        let closeButtonSize = AdaptyConstants.closeButtonSize
+//        let closeButtonSize = AdaptyConstants.closeButtonSize
         closeButton.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(50)
             make.left.equalToSuperview().offset(10)
-            make.height.width.equalTo(closeButtonSize)
+            make.height.width.equalTo(50)
         }
         
         
@@ -284,9 +284,9 @@ class PaywallVC: UIViewController {
         }
     }
     
-//    func packageFetched() {
-//        btnLifetime.title = "Lifetime - \(AdaptyManager.getPackagePrice(id: Constants.lifetimeProductID)) billed once"
-//        btnWeekly.title = "\(AdaptyManager.getPackagePrice(id: Constants.weeklyProductID)) per week"
-//    }
+    func packageFetched() {
+        btnLifetime.title = "Lifetime - \(AdaptyManager.getPackagePrice(id: "Constants.lifetimeProductID")) billed once"
+        btnWeekly.title = "\(AdaptyManager.getPackagePrice(id: "Constants.weeklyProductID")) per week"
+    }
     
 }
